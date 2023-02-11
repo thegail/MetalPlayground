@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				9F3B39462998293C00C8357A /* MetalToyApp.swift */,
-				9F3B39482998293C00C8357A /* ContentView.swift */,
+				9F3B3955299851DD00C8357A /* Views */,
 				9F3B394A2998293C00C8357A /* Assets.xcassets */,
 				9F3B394C2998293C00C8357A /* MetalToy.entitlements */,
 				9F3B394D2998293C00C8357A /* Preview Content */,
@@ -67,6 +67,14 @@
 				9F3B394E2998293C00C8357A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9F3B3955299851DD00C8357A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B39482998293C00C8357A /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
