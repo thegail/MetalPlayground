@@ -15,6 +15,9 @@
 		9F3B395B2998531100C8357A /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B395A2998531100C8357A /* ControlsView.swift */; };
 		9F3B395D2998550700C8357A /* RenderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B395C2998550700C8357A /* RenderConfiguration.swift */; };
 		9F3B39632998574D00C8357A /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39622998574D00C8357A /* RenderView.swift */; };
+		9F3B3968299858B900C8357A /* LocationControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B3967299858B900C8357A /* LocationControls.swift */; };
+		9F3B396A299858C600C8357A /* ZoomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B3969299858C600C8357A /* ZoomControls.swift */; };
+		9F3B396C299859C900C8357A /* ControlButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B396B299859C900C8357A /* ControlButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		9F3B395E299855C100C8357A /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
 		9F3B395F299855C200C8357A /* render_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = render_config.h; sourceTree = "<group>"; };
 		9F3B39622998574D00C8357A /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
+		9F3B3967299858B900C8357A /* LocationControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationControls.swift; sourceTree = "<group>"; };
+		9F3B3969299858C600C8357A /* ZoomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControls.swift; sourceTree = "<group>"; };
+		9F3B396B299859C900C8357A /* ControlButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +94,20 @@
 				9F3B39482998293C00C8357A /* ContentView.swift */,
 				9F3B39582998530D00C8357A /* EditorView.swift */,
 				9F3B395A2998531100C8357A /* ControlsView.swift */,
+				9F3B3964299858A900C8357A /* Controls */,
 				9F3B39622998574D00C8357A /* RenderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9F3B3964299858A900C8357A /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B3967299858B900C8357A /* LocationControls.swift */,
+				9F3B396B299859C900C8357A /* ControlButtonStyle.swift */,
+				9F3B3969299858C600C8357A /* ZoomControls.swift */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,10 +183,13 @@
 			files = (
 				9F3B39492998293C00C8357A /* ContentView.swift in Sources */,
 				9F3B395D2998550700C8357A /* RenderConfiguration.swift in Sources */,
+				9F3B396C299859C900C8357A /* ControlButtonStyle.swift in Sources */,
 				9F3B39632998574D00C8357A /* RenderView.swift in Sources */,
 				9F3B39592998530D00C8357A /* EditorView.swift in Sources */,
 				9F3B39472998293C00C8357A /* MetalToyApp.swift in Sources */,
 				9F3B395B2998531100C8357A /* ControlsView.swift in Sources */,
+				9F3B396A299858C600C8357A /* ZoomControls.swift in Sources */,
+				9F3B3968299858B900C8357A /* LocationControls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

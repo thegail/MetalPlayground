@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct ControlsView: View {
+	@Binding var configuration: RenderConfiguration
+	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		VStack(alignment: .trailing, spacing: 30) {
+			LocationControls()
+			ZoomControls()
+		}
+		.buttonStyle(ControlButtonStyle())
     }
 }
 
 struct ControlsView_Previews: PreviewProvider {
+	@State static var configuration = RenderConfiguration.defaultConfiguration
+	
     static var previews: some View {
-        ControlsView()
+        ControlsView(configuration: $configuration)
     }
 }

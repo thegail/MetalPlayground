@@ -14,10 +14,12 @@ struct ContentView: View {
     var body: some View {
 		VStack {
 			HStack {
-				ZStack {
+				ZStack(alignment: .topTrailing) {
 					RenderView()
 					if showControls {
-						ControlsView()
+						ControlsView(configuration: $configuration)
+							.padding()
+							.transition(.opacity.animation(.easeIn(duration: 0.1)))
 					}
 				}
 				.onHover(perform: { self.showControls = $0 })
