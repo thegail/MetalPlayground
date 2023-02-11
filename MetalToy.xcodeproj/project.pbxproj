@@ -14,6 +14,7 @@
 		9F3B39572998530600C8357A /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39562998530600C8357A /* OutputView.swift */; };
 		9F3B39592998530D00C8357A /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39582998530D00C8357A /* EditorView.swift */; };
 		9F3B395B2998531100C8357A /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B395A2998531100C8357A /* ControlsView.swift */; };
+		9F3B395D2998550700C8357A /* RenderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B395C2998550700C8357A /* RenderConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9F3B39562998530600C8357A /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		9F3B39582998530D00C8357A /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		9F3B395A2998531100C8357A /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		9F3B395C2998550700C8357A /* RenderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				9F3B39462998293C00C8357A /* MetalToyApp.swift */,
+				9F3B395C2998550700C8357A /* RenderConfiguration.swift */,
 				9F3B3955299851DD00C8357A /* Views */,
 				9F3B394A2998293C00C8357A /* Assets.xcassets */,
 				9F3B394C2998293C00C8357A /* MetalToy.entitlements */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F3B39492998293C00C8357A /* ContentView.swift in Sources */,
+				9F3B395D2998550700C8357A /* RenderConfiguration.swift in Sources */,
 				9F3B39592998530D00C8357A /* EditorView.swift in Sources */,
 				9F3B39472998293C00C8357A /* MetalToyApp.swift in Sources */,
 				9F3B395B2998531100C8357A /* ControlsView.swift in Sources */,

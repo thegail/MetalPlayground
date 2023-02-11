@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct EditorView: View {
+	@Binding var text: String
+	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TextEditor(text: $text)
+			.frame(width: 400, height: 400)
     }
 }
 
 struct EditorView_Previews: PreviewProvider {
+	@State static var value = "Hello, World!"
+	
     static var previews: some View {
-        EditorView()
+		EditorView(text: $value)
     }
 }

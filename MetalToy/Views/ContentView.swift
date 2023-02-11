@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+	@State var configuration: RenderConfiguration = RenderConfiguration.defaultConfiguration
+	
     var body: some View {
 		VStack {
 			HStack {
 				OutputView()
-				EditorView()
+				EditorView(text: $configuration.shaderSource)
 			}
 			ControlsView()
 		}
+		.padding()
     }
 }
 
