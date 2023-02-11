@@ -12,8 +12,8 @@ struct ControlsView: View {
 	
     var body: some View {
 		VStack(alignment: .trailing, spacing: 30) {
-			LocationControls()
-			ZoomControls()
+			LocationControls(configuration: $configuration)
+			ZoomControls(configuration: $configuration)
 		}
 		.buttonStyle(ControlButtonStyle())
     }

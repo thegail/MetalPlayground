@@ -8,17 +8,33 @@
 import SwiftUI
 
 struct ZoomControls: View {
+	@Binding var configuration: RenderConfiguration
+	
     var body: some View {
 		VStack {
-			Button(action: {}, label: { Image(systemName: "plus") })
-			Button(action: {}, label: { Image(systemName: "minus") })
+			Button(action: self.makeZoom(true), label: { Image(systemName: "plus") })
+			Button(action: self.makeZoom(false), label: { Image(systemName: "minus") })
 		}
     }
+	
+	private func makeZoom(_ isIn: Bool) -> () -> () {
+		if isIn {
+			return  {
+				self.configuration.shaderConfiguration.width /= 1
+			}
+		} else {
+			return {
+				self.configuration.shaderConfiguration.width *= 1
+			}
+		}
+	}
 }
 
 struct ZoomControls_Previews: PreviewProvider {
+	@State static var configuration: RenderConfiguration = RenderConfiguration.defaultConfiguration
+	
     static var previews: some View {
-        ZoomControls()
+        ZoomControls(configuration: $configuration)
 			.buttonStyle(ControlButtonStyle())
     }
 }
