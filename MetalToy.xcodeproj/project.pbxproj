@@ -11,10 +11,10 @@
 		9F3B39492998293C00C8357A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39482998293C00C8357A /* ContentView.swift */; };
 		9F3B394B2998293C00C8357A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B394A2998293C00C8357A /* Assets.xcassets */; };
 		9F3B394F2998293C00C8357A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B394E2998293C00C8357A /* Preview Assets.xcassets */; };
-		9F3B39572998530600C8357A /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39562998530600C8357A /* OutputView.swift */; };
 		9F3B39592998530D00C8357A /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39582998530D00C8357A /* EditorView.swift */; };
 		9F3B395B2998531100C8357A /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B395A2998531100C8357A /* ControlsView.swift */; };
 		9F3B395D2998550700C8357A /* RenderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B395C2998550700C8357A /* RenderConfiguration.swift */; };
+		9F3B39632998574D00C8357A /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39622998574D00C8357A /* RenderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +24,12 @@
 		9F3B394A2998293C00C8357A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F3B394C2998293C00C8357A /* MetalToy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalToy.entitlements; sourceTree = "<group>"; };
 		9F3B394E2998293C00C8357A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9F3B39562998530600C8357A /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		9F3B39582998530D00C8357A /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		9F3B395A2998531100C8357A /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
 		9F3B395C2998550700C8357A /* RenderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderConfiguration.swift; sourceTree = "<group>"; };
+		9F3B395E299855C100C8357A /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
+		9F3B395F299855C200C8357A /* render_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = render_config.h; sourceTree = "<group>"; };
+		9F3B39622998574D00C8357A /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,12 @@
 			children = (
 				9F3B39462998293C00C8357A /* MetalToyApp.swift */,
 				9F3B395C2998550700C8357A /* RenderConfiguration.swift */,
+				9F3B395F299855C200C8357A /* render_config.h */,
 				9F3B3955299851DD00C8357A /* Views */,
 				9F3B394A2998293C00C8357A /* Assets.xcassets */,
 				9F3B394C2998293C00C8357A /* MetalToy.entitlements */,
 				9F3B394D2998293C00C8357A /* Preview Content */,
+				9F3B395E299855C100C8357A /* bridging.h */,
 			);
 			path = MetalToy;
 			sourceTree = "<group>";
@@ -84,7 +88,7 @@
 				9F3B39482998293C00C8357A /* ContentView.swift */,
 				9F3B39582998530D00C8357A /* EditorView.swift */,
 				9F3B395A2998531100C8357A /* ControlsView.swift */,
-				9F3B39562998530600C8357A /* OutputView.swift */,
+				9F3B39622998574D00C8357A /* RenderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +125,7 @@
 				TargetAttributes = {
 					9F3B39422998293C00C8357A = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -161,10 +166,10 @@
 			files = (
 				9F3B39492998293C00C8357A /* ContentView.swift in Sources */,
 				9F3B395D2998550700C8357A /* RenderConfiguration.swift in Sources */,
+				9F3B39632998574D00C8357A /* RenderView.swift in Sources */,
 				9F3B39592998530D00C8357A /* EditorView.swift in Sources */,
 				9F3B39472998293C00C8357A /* MetalToyApp.swift in Sources */,
 				9F3B395B2998531100C8357A /* ControlsView.swift in Sources */,
-				9F3B39572998530600C8357A /* OutputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +290,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MetalToy/MetalToy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -311,6 +317,8 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = MetalToy/bridging.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,6 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MetalToy/MetalToy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -347,6 +356,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = MetalToy/bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

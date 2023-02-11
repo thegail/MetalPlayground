@@ -9,14 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
 	@State var configuration: RenderConfiguration = RenderConfiguration.defaultConfiguration
+	@State var showControls = false
 	
     var body: some View {
 		VStack {
 			HStack {
-				OutputView()
+				ZStack {
+					RenderView()
+					if showControls {
+						ControlsView()
+					}
+				}
+				.onHover(perform: { self.showControls = $0 })
 				EditorView(text: $configuration.shaderSource)
 			}
-			ControlsView()
 		}
 		.padding()
     }
