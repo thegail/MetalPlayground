@@ -19,7 +19,7 @@ class Renderer {
 	
 	init(configuration: RenderConfiguration) throws {
 		self.device = try MetalUtil.getDevice()
-		self.outputSize = MTLSize(width: 1, height: 1, depth: 0)
+		self.outputSize = MTLSize(width: 1, height: 1, depth: 1)
 		self.outputImage = try MetalUtil.makeOutputImage(size: self.outputSize, device: self.device)
 		let (compute, vertex, fragment) = try MetalUtil.getRenderFunctions(device: self.device)
 		self.computePipeline = try MetalUtil.makeComputePipeline(device: self.device, function: compute)
@@ -41,7 +41,10 @@ class Renderer {
 		commandBuffer.commit()
 	}
 	
-	func updateSize() throws {}
+	func updateSize(size: CGSize) throws {
+		self.outputSize = MTLSize(width: Int(size.width), height: Int(size.height), depth: 1)
+		self.outputImage = try MetalUtil.makeOutputImage(size: self.outputSize, device: self.device)
+	}
 	
 	private func encodeCompute(commandBuffer: MTLCommandBuffer) throws {
 		let length = MemoryLayout<render_config>.stride

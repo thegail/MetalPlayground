@@ -29,7 +29,7 @@ class RenderDelegate: NSObject, MTKViewDelegate {
 	
 	func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
 		do {
-			try self.renderer!.updateSize()
+			try self.renderer!.updateSize(size: size)
 		} catch let error {
 			print(error)
 			fatalError("Failed to update renderer")
