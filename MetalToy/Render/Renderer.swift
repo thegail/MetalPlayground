@@ -59,7 +59,7 @@ class Renderer {
 		encoder.setComputePipelineState(self.computePipeline)
 		encoder.setTexture(self.outputImage, index: 0)
 		encoder.setBuffer(configurationBuffer, offset: 0, index: 0)
-		encoder.dispatchThreads(self.outputSize, threadsPerThreadgroup: MTLSize(width: 8, height: 8, depth: 8))
+		encoder.dispatchThreads(self.outputSize, threadsPerThreadgroup: MTLSize(width: 8, height: 8, depth: 1))
 		encoder.endEncoding()
 	}
 	
