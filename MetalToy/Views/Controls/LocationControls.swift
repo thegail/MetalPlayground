@@ -37,8 +37,8 @@ struct LocationControls: View {
     }
 	
 	private func goHome() {
-		self.configuration.shaderConfiguration.x = 0.5
-		self.configuration.shaderConfiguration.y = 0.5
+		self.configuration.shaderConfiguration.x = 0
+		self.configuration.shaderConfiguration.y = 0
 		self.configuration.shaderConfiguration.width = 1
 	}
 	
