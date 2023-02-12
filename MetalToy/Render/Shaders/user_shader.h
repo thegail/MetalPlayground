@@ -8,6 +8,6 @@
 #ifndef user_shader_h
 #define user_shader_h
 
-float4 shader_main(uint2 coords, uint2 size, constant render_config* config);
+float4 shader_main(uint2 coords, uint2 size);
 
 #endif /* user_shader_h */
