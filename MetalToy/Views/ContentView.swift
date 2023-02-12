@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
 	@State var configuration: RenderConfiguration = RenderConfiguration.defaultConfiguration
 	@State var showControls = false
+	@State var showEditorControls = false
 	
     var body: some View {
 		VStack {
@@ -23,7 +24,15 @@ struct ContentView: View {
 					}
 				}
 				.onHover(perform: { self.showControls = $0 })
-				EditorView(text: $configuration.shaderSource)
+				ZStack(alignment: .topTrailing) {
+					EditorView(text: $configuration.shaderSource)
+					if showEditorControls {
+						EditorControlsView(configuration: $configuration)
+							.padding()
+							.transition(.opacity.animation(.easeIn(duration: 0.1)))
+					}
+				}
+				.onHover(perform: { self.showEditorControls = $0 })
 			}
 		}
 		.padding()

@@ -18,6 +18,7 @@
 		9F3B3968299858B900C8357A /* LocationControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B3967299858B900C8357A /* LocationControls.swift */; };
 		9F3B396A299858C600C8357A /* ZoomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B3969299858C600C8357A /* ZoomControls.swift */; };
 		9F3B396C299859C900C8357A /* ControlButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B396B299859C900C8357A /* ControlButtonStyle.swift */; };
+		9F3B397029993A0A00C8357A /* EditorControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B396F29993A0A00C8357A /* EditorControlsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9F3B3967299858B900C8357A /* LocationControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationControls.swift; sourceTree = "<group>"; };
 		9F3B3969299858C600C8357A /* ZoomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControls.swift; sourceTree = "<group>"; };
 		9F3B396B299859C900C8357A /* ControlButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonStyle.swift; sourceTree = "<group>"; };
+		9F3B396F29993A0A00C8357A /* EditorControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorControlsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				9F3B39482998293C00C8357A /* ContentView.swift */,
 				9F3B39582998530D00C8357A /* EditorView.swift */,
 				9F3B395A2998531100C8357A /* ControlsView.swift */,
+				9F3B396F29993A0A00C8357A /* EditorControlsView.swift */,
 				9F3B3964299858A900C8357A /* Controls */,
 				9F3B39622998574D00C8357A /* RenderView.swift */,
 			);
@@ -188,6 +191,7 @@
 				9F3B39592998530D00C8357A /* EditorView.swift in Sources */,
 				9F3B39472998293C00C8357A /* MetalToyApp.swift in Sources */,
 				9F3B395B2998531100C8357A /* ControlsView.swift in Sources */,
+				9F3B397029993A0A00C8357A /* EditorControlsView.swift in Sources */,
 				9F3B396A299858C600C8357A /* ZoomControls.swift in Sources */,
 				9F3B3968299858B900C8357A /* LocationControls.swift in Sources */,
 			);
