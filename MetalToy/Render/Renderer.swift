@@ -22,7 +22,7 @@ class Renderer {
 		self.outputSize = MTLSize(width: 1, height: 1, depth: 1)
 		self.outputImage = try MetalUtil.makeOutputImage(size: self.outputSize, device: self.device)
 		let (compute, vertex, fragment) = try MetalUtil.getRenderFunctions(device: self.device)
-		let dynamicLibrary = try MetalUtil.makeDynamicLibrary(device: self.device)
+		let dynamicLibrary = try? MetalUtil.makeDynamicLibrary(device: self.device, source: configuration.shaderSource)
 		self.computePipeline = try MetalUtil.makeComputePipeline(device: self.device, function: compute, library: dynamicLibrary)
 		self.renderPipeline = try MetalUtil.makeRenderPipeline(device: self.device, vertex: vertex, fragment: fragment)
 		self.indexBuffer = try MetalUtil.makeIndexBuffer(device: self.device, indices: Self.indices)

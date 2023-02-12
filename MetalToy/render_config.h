@@ -5,8 +5,8 @@
 //  Created by Teddy Gaillard on 2/11/23.
 //
 
-#ifndef adsf_h
-#define adsf_h
+#ifndef render_config_h
+#define render_config_h
 
 struct render_config {
 	float x;
@@ -14,4 +14,4 @@ struct render_config {
 	float width;
 };
 
-#endif /* adsf_h */
+#endif /* render_config_h */
