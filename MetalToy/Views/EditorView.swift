@@ -12,7 +12,7 @@ struct EditorView: View {
 	
     var body: some View {
         TextEditor(text: $text)
-			.frame(width: 400, height: 400)
+			.fontDesign(.monospaced)
     }
 }
 

@@ -14,27 +14,25 @@ struct ContentView: View {
 	@State var editorSource: String = RenderConfiguration.defaultConfiguration.shaderSource
 	
     var body: some View {
-		VStack {
-			HStack {
-				ZStack(alignment: .topTrailing) {
-					RenderView(configuration: configuration)
-					if showControls {
-						ControlsView(configuration: $configuration)
-							.padding()
-							.transition(.opacity.animation(.easeIn(duration: 0.1)))
-					}
+		HStack {
+			ZStack(alignment: .topTrailing) {
+				RenderView(configuration: configuration)
+				if showControls {
+					ControlsView(configuration: $configuration)
+						.padding()
+						.transition(.opacity.animation(.easeIn(duration: 0.1)))
 				}
-				.onHover(perform: { self.showControls = $0 })
-				ZStack(alignment: .topTrailing) {
-					EditorView(text: $editorSource)
-					if showEditorControls {
-						EditorControlsView(configuration: $configuration, editorSource: $editorSource)
-							.padding()
-							.transition(.opacity.animation(.easeIn(duration: 0.1)))
-					}
-				}
-				.onHover(perform: { self.showEditorControls = $0 })
 			}
+			.onHover(perform: { self.showControls = $0 })
+			ZStack(alignment: .topTrailing) {
+				EditorView(text: $editorSource)
+				if showEditorControls {
+					EditorControlsView(configuration: $configuration, editorSource: $editorSource)
+						.padding()
+						.transition(.opacity.animation(.easeIn(duration: 0.1)))
+				}
+			}
+			.onHover(perform: { self.showEditorControls = $0 })
 		}
 		.padding()
     }
