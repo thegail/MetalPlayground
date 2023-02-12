@@ -13,5 +13,6 @@ kernel void render_image(texture2d<float, access::write> image [[texture(0)]],
 						 uint2 coords [[thread_position_in_grid]],
 						 uint2 size [[threads_per_grid]],
 						 constant render_config* config [[buffer(0)]]) {
-	image.write(float4(1, 0, 0, 1), coords);
+	float2 value = float2(coords) / float2(size);
+	image.write(float4(value, 0, 1), coords);
 }
