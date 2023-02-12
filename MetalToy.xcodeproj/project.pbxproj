@@ -22,6 +22,8 @@
 		9F3B397529993D8D00C8357A /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B397429993D8D00C8357A /* Renderer.swift */; };
 		9F3B3977299947CB00C8357A /* MetalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B3976299947CB00C8357A /* MetalUtil.swift */; };
 		9F3B39792999489600C8357A /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39782999489600C8357A /* RenderView.swift */; };
+		9F3B397C29994A1500C8357A /* render.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B397B29994A1500C8357A /* render.metal */; };
+		9F3B397E29994AC600C8357A /* render_image.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B397D29994AC600C8357A /* render_image.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		9F3B397429993D8D00C8357A /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		9F3B3976299947CB00C8357A /* MetalUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalUtil.swift; sourceTree = "<group>"; };
 		9F3B39782999489600C8357A /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
+		9F3B397B29994A1500C8357A /* render.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = render.metal; sourceTree = "<group>"; };
+		9F3B397D29994AC600C8357A /* render_image.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = render_image.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +130,18 @@
 				9F3B397429993D8D00C8357A /* Renderer.swift */,
 				9F3B3976299947CB00C8357A /* MetalUtil.swift */,
 				9F3B39782999489600C8357A /* RenderView.swift */,
+				9F3B397A29994A0D00C8357A /* Shaders */,
 			);
 			path = Render;
+			sourceTree = "<group>";
+		};
+		9F3B397A29994A0D00C8357A /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B397B29994A1500C8357A /* render.metal */,
+				9F3B397D29994AC600C8357A /* render_image.metal */,
+			);
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,12 +222,14 @@
 				9F3B3977299947CB00C8357A /* MetalUtil.swift in Sources */,
 				9F3B39592998530D00C8357A /* EditorView.swift in Sources */,
 				9F3B39472998293C00C8357A /* MetalToyApp.swift in Sources */,
+				9F3B397E29994AC600C8357A /* render_image.metal in Sources */,
 				9F3B395B2998531100C8357A /* ControlsView.swift in Sources */,
 				9F3B397329993C8C00C8357A /* RenderDelegate.swift in Sources */,
 				9F3B397029993A0A00C8357A /* EditorControlsView.swift in Sources */,
 				9F3B396A299858C600C8357A /* ZoomControls.swift in Sources */,
 				9F3B39792999489600C8357A /* RenderView.swift in Sources */,
 				9F3B3968299858B900C8357A /* LocationControls.swift in Sources */,
+				9F3B397C29994A1500C8357A /* render.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

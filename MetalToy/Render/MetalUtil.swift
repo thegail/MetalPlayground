@@ -36,7 +36,7 @@ enum MetalUtil {
 			throw Error.shader(name: "render_image")
 		}
 		guard let vertex = library.makeFunction(name: "render_vertex") else {
-			throw Error.shader(name: "render_vertext")
+			throw Error.shader(name: "render_vertex")
 		}
 		guard let fragment = library.makeFunction(name: "render_fragment") else {
 			throw Error.shader(name: "render_fragment")
