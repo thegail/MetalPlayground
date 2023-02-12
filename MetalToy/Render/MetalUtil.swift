@@ -44,14 +44,22 @@ enum MetalUtil {
 		return (compute: compute, vertex: vertex, fragment: fragment)
 	}
 	
-	static func makeComputePipeline(device: MTLDevice, function: MTLFunction) throws -> MTLComputePipelineState {
+	static func makeDynamicLibrary(device: MTLDevice) throws -> MTLDynamicLibrary {
+		let options = MTLCompileOptions()
+		options.libraryType = .dynamic
+		options.installName = "@executable_path/libUserShader.dylib"
+		let library = try device.makeLibrary(source: "#include <metal_stdlib>\nusing namespace metal;float4 shader_main(uint2 coords, uint2 size) {float2 value = float2(coords) / float2(size);return float4(0, value, 1);}", options: options)
+		return try device.makeDynamicLibrary(library: library)
+	}
+	
+	static func makeComputePipeline(device: MTLDevice, function: MTLFunction, library: MTLDynamicLibrary) throws -> MTLComputePipelineState {
 		let descriptor = MTLComputePipelineDescriptor()
 		descriptor.computeFunction = function
-//		if #available(macOS 12.0, *) {
-//			computePipelineDescriptor.preloadedLibraries = [dynamic]
-//		} else {
-//			computePipelineDescriptor.insertLibraries = [dynamic]
-//		}
+		if #available(macOS 12.0, *) {
+			descriptor.preloadedLibraries = [library]
+		} else {
+			descriptor.insertLibraries = [library]
+		}
 		return try device.makeComputePipelineState(descriptor: descriptor, options: MTLPipelineOption(), reflection: nil)
 	}
 	
