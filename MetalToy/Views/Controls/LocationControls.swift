@@ -18,18 +18,18 @@ struct LocationControls: View {
 				})
 			}
 			HStack {
-				Button(action: self.makeMove(.down), label: {
+				Button(action: self.makeMove(.left), label: {
 					Image(systemName: "chevron.backward")
 				})
 				Button(action: self.goHome, label: {
 					Image(systemName: "house")
 				})
-				Button(action: self.makeMove(.left), label: {
+				Button(action: self.makeMove(.right), label: {
 					Image(systemName: "chevron.forward")
 				})
 			}
 			HStack {
-				Button(action: self.makeMove(.right), label: {
+				Button(action: self.makeMove(.down), label: {
 					Image(systemName: "chevron.down")
 				})
 			}
