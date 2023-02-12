@@ -6,7 +6,6 @@
 //
 
 #include <metal_stdlib>
-#include "../../render_config.h"
 #include "user_shader.h"
 using namespace metal;
 
