@@ -9,14 +9,14 @@ import MetalKit
 import SwiftUI
 
 class RenderDelegate: NSObject, MTKViewDelegate {
-	@State var configuration: RenderConfiguration
+	var configuration: RenderConfiguration
 	var renderer: Renderer
 	
-	init(configuration: State<RenderConfiguration>) {
-		self._configuration = configuration
+	init(configuration: RenderConfiguration) {
+		self.configuration = configuration
 		
 		do {
-			self.renderer = try Renderer(configuration: configuration.wrappedValue)
+			self.renderer = try Renderer(configuration: configuration)
 		} catch let error {
 			print(error)
 			fatalError("Failed to initialize renderer")
