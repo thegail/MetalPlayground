@@ -10,8 +10,13 @@ import MetalKit
 class RenderDelegate: NSObject, MTKViewDelegate {
 	var renderer: Renderer?
 	
-	override init() {
-		self.renderer = nil
+	init(configuration: RenderConfiguration) {
+		do {
+			self.renderer = try Renderer(configuration: configuration)
+		} catch let error {
+			print(error)
+			fatalError("Failed to initialize renderer")
+		}
 	}
 	
 	func draw(in view: MTKView) {
@@ -23,20 +28,11 @@ class RenderDelegate: NSObject, MTKViewDelegate {
 	}
 	
 	func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-		if self.renderer == nil {
-			do {
-				self.renderer = try Renderer()
-			} catch let error {
-				print(error)
-				fatalError("Could not initialize renderer")
-			}
-		} else {
-			do {
-				try self.renderer!.updateSize()
-			} catch let error {
-				print(error)
-				fatalError("Could not update renderer")
-			}
+		do {
+			try self.renderer!.updateSize()
+		} catch let error {
+			print(error)
+			fatalError("Failed to update renderer")
 		}
 	}
 }

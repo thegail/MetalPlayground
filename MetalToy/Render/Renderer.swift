@@ -13,23 +13,67 @@ class Renderer {
 	var outputImage: MTLTexture
 	let computePipeline: MTLComputePipelineState
 	let renderPipeline: MTLRenderPipelineState
+	let indexBuffer: MTLBuffer
 	let commandQueue: MTLCommandQueue
+	var configuration: RenderConfiguration
 	
-	init() throws {
+	init(configuration: RenderConfiguration) throws {
 		self.device = try Self.getDevice()
 		self.outputSize = MTLSize(width: 0, height: 0, depth: 0)
 		self.outputImage = try Self.makeOutputImage(size: self.outputSize, device: self.device)
 		let (compute, vertex, fragment) = try Self.getRenderFunctions(device: self.device)
 		self.computePipeline = try Self.makeComputePipeline(device: self.device, function: compute)
 		self.renderPipeline = try Self.makeRenderPipeline(device: self.device, vertex: vertex, fragment: fragment)
+		self.indexBuffer = try Self.makeIndexBuffer(device: self.device)
 		self.commandQueue = try Self.getCommandQueue(device: self.device)
+		self.configuration = configuration
 	}
 	
-	func draw(in view: MTKView) {
+	func draw(in view: MTKView) throws {
+		guard let commandBuffer = self.commandQueue.makeCommandBuffer() else {
+			throw Error.commandBuffer
+		}
 		
+		try self.encodeCompute(commandBuffer: commandBuffer)
+		try self.encodeRender(commandBuffer: commandBuffer, view: view)
+		
+		commandBuffer.present(view.currentDrawable!)
+		commandBuffer.commit()
 	}
 	
-	func updateSize() {}
+	func updateSize() throws {}
+	
+	private func encodeCompute(commandBuffer: MTLCommandBuffer) throws {
+		let length = MemoryLayout<render_config>.stride
+		var configuration = self.configuration.shaderConfiguration
+		guard let configurationBuffer = device.makeBuffer(bytes: &configuration, length: length) else {
+			throw Error.dataBuffer(description: "config")
+		}
+		
+		guard let encoder = commandBuffer.makeComputeCommandEncoder() else {
+			throw Error.commandEncoder(type: "compute")
+		}
+		encoder.setComputePipelineState(self.computePipeline)
+		encoder.setTexture(self.outputImage, index: 0)
+		encoder.setBuffer(configurationBuffer, offset: 0, index: 0)
+		encoder.dispatchThreads(self.outputSize, threadsPerThreadgroup: MTLSize(width: 8, height: 8, depth: 8))
+		encoder.endEncoding()
+	}
+	
+	private func encodeRender(commandBuffer: MTLCommandBuffer, view: MTKView) throws {
+		guard let renderPassDescriptor = view.currentRenderPassDescriptor else {
+			throw Error.renderPassDescriptor
+		}
+		renderPassDescriptor.colorAttachments[0].clearColor = view.clearColor
+		
+		guard let encoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
+			throw Error.commandEncoder(type: "render")
+		}
+		encoder.setFragmentTexture(self.outputImage, index: 0)
+		encoder.setRenderPipelineState(self.renderPipeline)
+		encoder.drawIndexedPrimitives(type: .triangle, indexCount: Self.indices.count, indexType: .uint16, indexBuffer: self.indexBuffer, indexBufferOffset: 0)
+		encoder.endEncoding()
+	}
 	
 	private static func getDevice() throws -> MTLDevice {
 		guard let device = MTLCreateSystemDefaultDevice() else {
@@ -86,6 +130,13 @@ class Renderer {
 		return try device.makeRenderPipelineState(descriptor: descriptor)
 	}
 	
+	private static func makeIndexBuffer(device: MTLDevice) throws -> MTLBuffer {
+		guard let buffer = device.makeBuffer(bytes: Self.indices, length: MemoryLayout<UInt16>.stride * Self.indices.count) else {
+			throw Error.dataBuffer(description: "indices")
+		}
+		return buffer
+	}
+	
 	private static func getCommandQueue(device: MTLDevice) throws -> MTLCommandQueue {
 		guard let queue = device.makeCommandQueue() else {
 			throw Error.commandQueue
@@ -93,7 +144,11 @@ class Renderer {
 		return queue
 	}
 	
+	private static let indices: Array<UInt16> = [0, 1, 3, 3, 2, 0]
+	
 	enum Error: Swift.Error {
 		case device, texture, shaderLibrary, shader(name: String), commandQueue
+		case commandBuffer, dataBuffer(description: String), commandEncoder(type: String)
+		case renderPassDescriptor
 	}
 }
