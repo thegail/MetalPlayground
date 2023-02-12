@@ -6,13 +6,17 @@
 //
 
 import MetalKit
+import SwiftUI
 
 class RenderDelegate: NSObject, MTKViewDelegate {
-	var renderer: Renderer?
+	@State var configuration: RenderConfiguration
+	var renderer: Renderer
 	
-	init(configuration: RenderConfiguration) {
+	init(configuration: State<RenderConfiguration>) {
+		self._configuration = configuration
+		
 		do {
-			self.renderer = try Renderer(configuration: configuration)
+			self.renderer = try Renderer(configuration: configuration.wrappedValue)
 		} catch let error {
 			print(error)
 			fatalError("Failed to initialize renderer")
@@ -21,7 +25,7 @@ class RenderDelegate: NSObject, MTKViewDelegate {
 	
 	func draw(in view: MTKView) {
 		do {
-			try self.renderer!.draw(in: view)
+			try self.renderer.draw(in: view)
 		} catch let error {
 			print("Error: draw failed! \(error)")
 		}
@@ -29,10 +33,19 @@ class RenderDelegate: NSObject, MTKViewDelegate {
 	
 	func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
 		do {
-			try self.renderer!.updateSize(size: size)
+			try self.renderer.updateSize(size: size)
 		} catch let error {
 			print(error)
 			fatalError("Failed to update renderer")
+		}
+	}
+	
+	func updateConfiguration() {
+		self.renderer.configuration = self.configuration
+		do {
+			try self.renderer.updateShader()
+		} catch let error {
+			print("Error: configuration update failed! \(error)")
 		}
 	}
 }

@@ -9,12 +9,10 @@ import MetalKit
 import SwiftUI
 
 struct RenderView: NSViewRepresentable {
-	var configuration: RenderConfiguration
 	var delegate: RenderDelegate
 	
-	init(configuration: RenderConfiguration) {
-		self.configuration = configuration
-		self.delegate = RenderDelegate(configuration: self.configuration)
+	init(configuration: State<RenderConfiguration>) {
+		self.delegate = RenderDelegate(configuration: configuration)
 	}
 	
 	func makeCoordinator() -> RenderDelegate {
@@ -35,5 +33,7 @@ struct RenderView: NSViewRepresentable {
 		return metalView
 	}
 	
-	func updateNSView(_ nsView: NSViewType, context: Context) {}
+	func updateNSView(_ nsView: NSViewType, context: Context) {
+		self.delegate.updateConfiguration()
+	}
 }

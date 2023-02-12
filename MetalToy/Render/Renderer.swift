@@ -11,7 +11,8 @@ class Renderer {
 	let device: MTLDevice
 	var outputSize: MTLSize
 	var outputImage: MTLTexture
-	let computePipeline: MTLComputePipelineState
+	let computeFunction: MTLFunction
+	var computePipeline: MTLComputePipelineState
 	let renderPipeline: MTLRenderPipelineState
 	let indexBuffer: MTLBuffer
 	let commandQueue: MTLCommandQueue
@@ -22,6 +23,7 @@ class Renderer {
 		self.outputSize = MTLSize(width: 1, height: 1, depth: 1)
 		self.outputImage = try MetalUtil.makeOutputImage(size: self.outputSize, device: self.device)
 		let (compute, vertex, fragment) = try MetalUtil.getRenderFunctions(device: self.device)
+		self.computeFunction = compute
 		let dynamicLibrary = try? MetalUtil.makeDynamicLibrary(device: self.device, source: configuration.shaderSource)
 		self.computePipeline = try MetalUtil.makeComputePipeline(device: self.device, function: compute, library: dynamicLibrary)
 		self.renderPipeline = try MetalUtil.makeRenderPipeline(device: self.device, vertex: vertex, fragment: fragment)
@@ -45,6 +47,11 @@ class Renderer {
 	func updateSize(size: CGSize) throws {
 		self.outputSize = MTLSize(width: Int(size.width), height: Int(size.height), depth: 1)
 		self.outputImage = try MetalUtil.makeOutputImage(size: self.outputSize, device: self.device)
+	}
+	
+	func updateShader() throws {
+		let dynamicLibrary = try? MetalUtil.makeDynamicLibrary(device: self.device, source: self.configuration.shaderSource)
+		self.computePipeline = try MetalUtil.makeComputePipeline(device: self.device, function: self.computeFunction, library: dynamicLibrary)
 	}
 	
 	private func encodeCompute(commandBuffer: MTLCommandBuffer) throws {
