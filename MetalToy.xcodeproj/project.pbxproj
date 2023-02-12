@@ -23,7 +23,7 @@
 		9F3B3977299947CB00C8357A /* MetalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B3976299947CB00C8357A /* MetalUtil.swift */; };
 		9F3B39792999489600C8357A /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39782999489600C8357A /* RenderView.swift */; };
 		9F3B397C29994A1500C8357A /* render.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B397B29994A1500C8357A /* render.metal */; };
-		9F3B397E29994AC600C8357A /* render_image.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B397D29994AC600C8357A /* render_image.metal */; };
+		9F3B397E29994AC600C8357A /* make_image.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B397D29994AC600C8357A /* make_image.metal */; };
 		9F3B398929994E1600C8357A /* user_shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B398829994E1600C8357A /* user_shader.metal */; };
 		9F3B398D2999526600C8357A /* libUserShader.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B398129994DFA00C8357A /* libUserShader.metallib */; };
 /* End PBXBuildFile section */
@@ -59,7 +59,7 @@
 		9F3B3976299947CB00C8357A /* MetalUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalUtil.swift; sourceTree = "<group>"; };
 		9F3B39782999489600C8357A /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
 		9F3B397B29994A1500C8357A /* render.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = render.metal; sourceTree = "<group>"; };
-		9F3B397D29994AC600C8357A /* render_image.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = render_image.metal; sourceTree = "<group>"; };
+		9F3B397D29994AC600C8357A /* make_image.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = make_image.metal; sourceTree = "<group>"; };
 		9F3B398129994DFA00C8357A /* libUserShader.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = libUserShader.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3B398829994E1600C8357A /* user_shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = user_shader.metal; sourceTree = "<group>"; };
 		9F3B398A29994E9800C8357A /* user_shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = user_shader.h; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				9F3B397B29994A1500C8357A /* render.metal */,
-				9F3B397D29994AC600C8357A /* render_image.metal */,
+				9F3B397D29994AC600C8357A /* make_image.metal */,
 				9F3B398A29994E9800C8357A /* user_shader.h */,
 				9F3B398829994E1600C8357A /* user_shader.metal */,
 			);
@@ -263,7 +263,7 @@
 				9F3B3977299947CB00C8357A /* MetalUtil.swift in Sources */,
 				9F3B39592998530D00C8357A /* EditorView.swift in Sources */,
 				9F3B39472998293C00C8357A /* MetalToyApp.swift in Sources */,
-				9F3B397E29994AC600C8357A /* render_image.metal in Sources */,
+				9F3B397E29994AC600C8357A /* make_image.metal in Sources */,
 				9F3B395B2998531100C8357A /* ControlsView.swift in Sources */,
 				9F3B397329993C8C00C8357A /* RenderDelegate.swift in Sources */,
 				9F3B397029993A0A00C8357A /* EditorControlsView.swift in Sources */,

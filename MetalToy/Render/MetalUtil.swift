@@ -32,8 +32,8 @@ enum MetalUtil {
 		guard let library = device.makeDefaultLibrary() else {
 			throw Error.shaderLibrary
 		}
-		guard let compute = library.makeFunction(name: "render_image") else {
-			throw Error.shader(name: "render_image")
+		guard let compute = library.makeFunction(name: "make_image") else {
+			throw Error.shader(name: "make_image")
 		}
 		guard let vertex = library.makeFunction(name: "render_vertex") else {
 			throw Error.shader(name: "render_vertex")

@@ -1,5 +1,5 @@
 //
-//  render_image.metal
+//  make_image.metal
 //  MetalToy
 //
 //  Created by Teddy Gaillard on 2/12/23.
@@ -10,7 +10,7 @@
 #include "user_shader.h"
 using namespace metal;
 
-kernel void render_image(texture2d<float, access::write> image [[texture(0)]],
+kernel void make_image(texture2d<float, access::write> image [[texture(0)]],
 						 uint2 coords [[thread_position_in_grid]],
 						 uint2 size [[threads_per_grid]],
 						 constant render_config* config [[buffer(0)]]) {
