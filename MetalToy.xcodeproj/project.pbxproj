@@ -63,6 +63,7 @@
 		9F3B398129994DFA00C8357A /* libUserShader.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = libUserShader.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3B398829994E1600C8357A /* user_shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = user_shader.metal; sourceTree = "<group>"; };
 		9F3B398A29994E9800C8357A /* user_shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = user_shader.h; sourceTree = "<group>"; };
+		9F3B398F2999638F00C8357A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		9F3B393A2998293C00C8357A = {
 			isa = PBXGroup;
 			children = (
+				9F3B398F2999638F00C8357A /* .gitignore */,
 				9F3B39452998293C00C8357A /* MetalToy */,
 				9F3B39442998293C00C8357A /* Products */,
 			);
