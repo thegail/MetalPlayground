@@ -20,11 +20,11 @@ struct ZoomControls: View {
 	private func makeZoom(_ isIn: Bool) -> () -> () {
 		if isIn {
 			return  {
-				self.configuration.shaderConfiguration.width /= 1
+				self.configuration.shaderConfiguration.width /= 1.1
 			}
 		} else {
 			return {
-				self.configuration.shaderConfiguration.width *= 1
+				self.configuration.shaderConfiguration.width *= 1.1
 			}
 		}
 	}
