@@ -18,14 +18,14 @@ class Renderer {
 	var configuration: RenderConfiguration
 	
 	init(configuration: RenderConfiguration) throws {
-		self.device = try Self.getDevice()
+		self.device = try MetalUtil.getDevice()
 		self.outputSize = MTLSize(width: 0, height: 0, depth: 0)
-		self.outputImage = try Self.makeOutputImage(size: self.outputSize, device: self.device)
-		let (compute, vertex, fragment) = try Self.getRenderFunctions(device: self.device)
-		self.computePipeline = try Self.makeComputePipeline(device: self.device, function: compute)
-		self.renderPipeline = try Self.makeRenderPipeline(device: self.device, vertex: vertex, fragment: fragment)
-		self.indexBuffer = try Self.makeIndexBuffer(device: self.device)
-		self.commandQueue = try Self.getCommandQueue(device: self.device)
+		self.outputImage = try MetalUtil.makeOutputImage(size: self.outputSize, device: self.device)
+		let (compute, vertex, fragment) = try MetalUtil.getRenderFunctions(device: self.device)
+		self.computePipeline = try MetalUtil.makeComputePipeline(device: self.device, function: compute)
+		self.renderPipeline = try MetalUtil.makeRenderPipeline(device: self.device, vertex: vertex, fragment: fragment)
+		self.indexBuffer = try MetalUtil.makeIndexBuffer(device: self.device, indices: Self.indices)
+		self.commandQueue = try MetalUtil.getCommandQueue(device: self.device)
 		self.configuration = configuration
 	}
 	
@@ -73,75 +73,6 @@ class Renderer {
 		encoder.setRenderPipelineState(self.renderPipeline)
 		encoder.drawIndexedPrimitives(type: .triangle, indexCount: Self.indices.count, indexType: .uint16, indexBuffer: self.indexBuffer, indexBufferOffset: 0)
 		encoder.endEncoding()
-	}
-	
-	private static func getDevice() throws -> MTLDevice {
-		guard let device = MTLCreateSystemDefaultDevice() else {
-			throw Error.device
-		}
-		return device
-	}
-	
-	private static func makeOutputImage(size: MTLSize, device: MTLDevice) throws -> MTLTexture {
-		let descriptor = MTLTextureDescriptor()
-		descriptor.pixelFormat = .rgba32Float
-		descriptor.width = size.width
-		descriptor.height = size.height
-		descriptor.usage = .unknown
-		descriptor.storageMode = .private
-		guard let texture = device.makeTexture(descriptor: descriptor) else {
-			throw Error.texture
-		}
-		return texture
-	}
-	
-	private static func getRenderFunctions(device: MTLDevice) throws -> (compute: MTLFunction, vertex: MTLFunction, fragment: MTLFunction) {
-		guard let library = device.makeDefaultLibrary() else {
-			throw Error.shaderLibrary
-		}
-		guard let compute = library.makeFunction(name: "render_image") else {
-			throw Error.shader(name: "render_image")
-		}
-		guard let vertex = library.makeFunction(name: "render_vertex") else {
-			throw Error.shader(name: "render_vertext")
-		}
-		guard let fragment = library.makeFunction(name: "render_fragment") else {
-			throw Error.shader(name: "render_fragment")
-		}
-		return (compute: compute, vertex: vertex, fragment: fragment)
-	}
-	
-	private static func makeComputePipeline(device: MTLDevice, function: MTLFunction) throws -> MTLComputePipelineState {
-		let descriptor = MTLComputePipelineDescriptor()
-		descriptor.computeFunction = function
-//		if #available(macOS 12.0, *) {
-//			computePipelineDescriptor.preloadedLibraries = [dynamic]
-//		} else {
-//			computePipelineDescriptor.insertLibraries = [dynamic]
-//		}
-		return try device.makeComputePipelineState(descriptor: descriptor, options: MTLPipelineOption(), reflection: nil)
-	}
-	
-	private static func makeRenderPipeline(device: MTLDevice, vertex: MTLFunction, fragment: MTLFunction) throws -> MTLRenderPipelineState {
-		let descriptor = MTLRenderPipelineDescriptor()
-		descriptor.vertexFunction = vertex
-		descriptor.fragmentFunction = fragment
-		descriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
-		return try device.makeRenderPipelineState(descriptor: descriptor)
-	}
-	
-	private static func makeIndexBuffer(device: MTLDevice) throws -> MTLBuffer {
-		guard let buffer = device.makeBuffer(bytes: Self.indices, length: MemoryLayout<UInt16>.stride * Self.indices.count) else {
-			throw Error.dataBuffer(description: "indices")
-		}
-		return buffer
-	}
-	
-	private static func getCommandQueue(device: MTLDevice) throws -> MTLCommandQueue {
-		guard let queue = device.makeCommandQueue() else {
-			throw Error.commandQueue
-		}
-		return queue
 	}
 	
 	private static let indices: Array<UInt16> = [0, 1, 3, 3, 2, 0]
