@@ -19,7 +19,7 @@ class Renderer {
 	
 	init(configuration: RenderConfiguration) throws {
 		self.device = try MetalUtil.getDevice()
-		self.outputSize = MTLSize(width: 0, height: 0, depth: 0)
+		self.outputSize = MTLSize(width: 1, height: 1, depth: 0)
 		self.outputImage = try MetalUtil.makeOutputImage(size: self.outputSize, device: self.device)
 		let (compute, vertex, fragment) = try MetalUtil.getRenderFunctions(device: self.device)
 		self.computePipeline = try MetalUtil.makeComputePipeline(device: self.device, function: compute)

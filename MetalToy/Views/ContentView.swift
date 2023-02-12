@@ -16,7 +16,7 @@ struct ContentView: View {
 		VStack {
 			HStack {
 				ZStack(alignment: .topTrailing) {
-					RenderView()
+					RenderView(configuration: configuration)
 					if showControls {
 						ControlsView(configuration: $configuration)
 							.padding()
