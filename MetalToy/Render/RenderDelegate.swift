@@ -15,14 +15,28 @@ class RenderDelegate: NSObject, MTKViewDelegate {
 	}
 	
 	func draw(in view: MTKView) {
-		self.renderer!.draw(in: view)
+		do {
+			try self.renderer!.draw(in: view)
+		} catch let error {
+			print("Error: draw failed! \(error)")
+		}
 	}
 	
 	func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
 		if self.renderer == nil {
-			self.renderer = Renderer()
+			do {
+				self.renderer = try Renderer()
+			} catch let error {
+				print(error)
+				fatalError("Could not initialize renderer")
+			}
 		} else {
-			self.renderer!.updateSize()
+			do {
+				try self.renderer!.updateSize()
+			} catch let error {
+				print(error)
+				fatalError("Could not update renderer")
+			}
 		}
 	}
 }
