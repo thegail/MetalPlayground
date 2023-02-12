@@ -19,6 +19,8 @@
 		9F3B396A299858C600C8357A /* ZoomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B3969299858C600C8357A /* ZoomControls.swift */; };
 		9F3B396C299859C900C8357A /* ControlButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B396B299859C900C8357A /* ControlButtonStyle.swift */; };
 		9F3B397029993A0A00C8357A /* EditorControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B396F29993A0A00C8357A /* EditorControlsView.swift */; };
+		9F3B397329993C8C00C8357A /* RenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B397229993C8C00C8357A /* RenderDelegate.swift */; };
+		9F3B397529993D8D00C8357A /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B397429993D8D00C8357A /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		9F3B3969299858C600C8357A /* ZoomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControls.swift; sourceTree = "<group>"; };
 		9F3B396B299859C900C8357A /* ControlButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonStyle.swift; sourceTree = "<group>"; };
 		9F3B396F29993A0A00C8357A /* EditorControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorControlsView.swift; sourceTree = "<group>"; };
+		9F3B397229993C8C00C8357A /* RenderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDelegate.swift; sourceTree = "<group>"; };
+		9F3B397429993D8D00C8357A /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				9F3B39462998293C00C8357A /* MetalToyApp.swift */,
 				9F3B395C2998550700C8357A /* RenderConfiguration.swift */,
 				9F3B395F299855C200C8357A /* render_config.h */,
+				9F3B397129993C7300C8357A /* Render */,
 				9F3B3955299851DD00C8357A /* Views */,
 				9F3B394A2998293C00C8357A /* Assets.xcassets */,
 				9F3B394C2998293C00C8357A /* MetalToy.entitlements */,
@@ -111,6 +116,15 @@
 				9F3B3969299858C600C8357A /* ZoomControls.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		9F3B397129993C7300C8357A /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B397229993C8C00C8357A /* RenderDelegate.swift */,
+				9F3B397429993D8D00C8357A /* Renderer.swift */,
+			);
+			path = Render;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,9 +202,11 @@
 				9F3B395D2998550700C8357A /* RenderConfiguration.swift in Sources */,
 				9F3B396C299859C900C8357A /* ControlButtonStyle.swift in Sources */,
 				9F3B39632998574D00C8357A /* RenderView.swift in Sources */,
+				9F3B397529993D8D00C8357A /* Renderer.swift in Sources */,
 				9F3B39592998530D00C8357A /* EditorView.swift in Sources */,
 				9F3B39472998293C00C8357A /* MetalToyApp.swift in Sources */,
 				9F3B395B2998531100C8357A /* ControlsView.swift in Sources */,
+				9F3B397329993C8C00C8357A /* RenderDelegate.swift in Sources */,
 				9F3B397029993A0A00C8357A /* EditorControlsView.swift in Sources */,
 				9F3B396A299858C600C8357A /* ZoomControls.swift in Sources */,
 				9F3B3968299858B900C8357A /* LocationControls.swift in Sources */,
