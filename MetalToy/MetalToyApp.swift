@@ -15,7 +15,7 @@ struct MetalToyApp: App {
 	
     var body: some Scene {
 		DocumentGroup(newDocument: MetalDocument()) { file in
-			ContentView(document: file.$document/*, documentURL: file.fileURL*/)
+			ContentView(document: file.$document)
 		}
 		.commands {
 			EditorCommands(configuration: $configuration, document: $document, exportShown: $exportShown)

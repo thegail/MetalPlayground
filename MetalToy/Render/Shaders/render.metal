@@ -34,4 +34,3 @@ fragment float4 render_fragment(RasterizerData in [[stage_in]], texture2d<float>
 	float4 color = image.sample(linearSampler, in.uv);
 	return color;
 }
-
