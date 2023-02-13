@@ -10,5 +10,5 @@
 using namespace metal;
 
 float4 shader_main(float2 coords) {
-	return float4(coords, 0, 1);
+	return float4(coords + float2(0.5), 0, 1);
 }
