@@ -1,6 +1,6 @@
 //
 //  ControlsView.swift
-//  MetalToy
+//  MetalPlayground
 //
 //  Created by Teddy Gaillard on 2/11/23.
 //

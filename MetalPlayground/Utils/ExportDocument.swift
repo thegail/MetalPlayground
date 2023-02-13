@@ -1,6 +1,6 @@
 //
 //  ExportDocument.swift
-//  MetalToy
+//  MetalPlayground
 //
 //  Created by Teddy Gaillard on 2/13/23.
 //
