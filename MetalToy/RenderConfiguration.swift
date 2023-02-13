@@ -10,12 +10,14 @@ import Foundation
 struct RenderConfiguration {
 	var shaderSource: String
 	var shaderConfiguration: render_config
+	var initialCoordinates: SIMD2<Float> = SIMD2(0, 0)
 	
 	var coordinates: SIMD2<Float> {
 		get {
 			SIMD2(self.shaderConfiguration.x, self.shaderConfiguration.y)
 		}
 		set(new) {
+			self.initialCoordinates = new
 			self.shaderConfiguration.x = new.x
 			self.shaderConfiguration.y = new.y
 		}
@@ -26,6 +28,15 @@ struct RenderConfiguration {
 		}
 		set(new) {
 			self.shaderConfiguration.width = new
+		}
+	}
+	var gestureCoordinates: SIMD2<Float> {
+		get {
+			self.coordinates
+		}
+		set(new) {
+			self.shaderConfiguration.x = new.x
+			self.shaderConfiguration.y = new.y
 		}
 	}
 	
@@ -50,8 +61,11 @@ struct RenderConfiguration {
 	}
 	
 	mutating func goHome() {
-		self.shaderConfiguration.x = 0
-		self.shaderConfiguration.y = 0
+		self.coordinates = SIMD2(0, 0)
 		self.shaderConfiguration.width = 1
+	}
+	
+	mutating func endGesture() {
+		self.initialCoordinates = self.coordinates
 	}
 }

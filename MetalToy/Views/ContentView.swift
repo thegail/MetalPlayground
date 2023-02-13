@@ -12,7 +12,6 @@ struct ContentView: View {
 	@State var showControls = false
 	@State var showEditorControls = false
 	@Binding var document: MetalDocument
-	@State var initialCoordinates: SIMD2<Float> = SIMD2(0, 0)
 	
 	init(document: Binding<MetalDocument>) {
 		self._document = document
@@ -26,15 +25,15 @@ struct ContentView: View {
 			.onChanged { value in
 				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / 300 - 0.5
 				let normalizedCurrent = SIMD2(value.location) * SIMD2(-1, 1) / 300 - 0.5
-				let newValue = initialCoordinates + normalizedCurrent - normalizedStart
-				self.configuration.coordinates = newValue
+				let newValue = self.configuration.initialCoordinates + normalizedCurrent - normalizedStart
+				self.configuration.gestureCoordinates = newValue
 			}
 			.onEnded { value in
 				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / 300 - 0.5
 				let normalizedCurrent = SIMD2(value.predictedEndLocation) * SIMD2(-1, 1) / 300 - 0.5
-				let newValue = initialCoordinates + normalizedCurrent - normalizedStart
-				self.configuration.coordinates = newValue
-				self.initialCoordinates = self.configuration.coordinates
+				let newValue = self.configuration.initialCoordinates + normalizedCurrent - normalizedStart
+				self.configuration.gestureCoordinates = newValue
+				self.configuration.endGesture()
 			}
 	}
 	
