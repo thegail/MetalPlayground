@@ -11,13 +11,14 @@ import SwiftUI
 struct MetalToyApp: App {
 	@FocusedBinding(\.configuration) var configuration: RenderConfiguration?
 	@FocusedBinding(\.document) var document: MetalDocument?
+	@FocusedBinding(\.exportShown) var exportShown: Bool?
 	
     var body: some Scene {
 		DocumentGroup(newDocument: MetalDocument()) { file in
 			ContentView(document: file.$document/*, documentURL: file.fileURL*/)
 		}
 		.commands {
-			EditorCommands(configuration: $configuration, document: $document)
+			EditorCommands(configuration: $configuration, document: $document, exportShown: $exportShown)
 		}
     }
 }

@@ -36,3 +36,18 @@ extension FocusedValues {
 		}
 	}
 }
+
+extension FocusedValues {
+	struct ExportShownFocusedValues: FocusedValueKey {
+		typealias Value = Binding<Bool>
+	}
+
+	var exportShown: Binding<Bool>? {
+		get {
+			self[ExportShownFocusedValues.self]
+		}
+		set {
+			self[ExportShownFocusedValues.self] = newValue
+		}
+	}
+}

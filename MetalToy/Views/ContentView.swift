@@ -77,6 +77,7 @@ struct ContentView: View {
 		.padding()
 		.focusedSceneValue(\.configuration, self.$configuration)
 		.focusedSceneValue(\.document, self.$document)
+		.focusedSceneValue(\.exportShown, self.$showExportOptionsMenu)
 		.sheet(isPresented: self.$showExportOptionsMenu, onDismiss: {
 			if self.continueExport {
 				self.showExportMenu = true

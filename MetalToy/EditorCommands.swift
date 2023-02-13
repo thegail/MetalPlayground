@@ -10,6 +10,7 @@ import SwiftUI
 struct EditorCommands: Commands {
 	@Binding var configuration: RenderConfiguration?
 	@Binding var document: MetalDocument?
+	@Binding var exportShown: Bool?
 	
 	var body: some Commands {
 		TextEditingCommands()
@@ -23,6 +24,12 @@ struct EditorCommands: Commands {
 			}
 			.keyboardShortcut("r", modifiers: .command)
 			.disabled(self.configuration == nil || self.document == nil)
+			
+			Button("Export") {
+				self.exportShown = true
+			}
+			.keyboardShortcut("e", modifiers: [.command, .option])
+			.disabled(self.exportShown ?? true)
 		}
 		
 		CommandGroup(before: .toolbar) {
