@@ -37,9 +37,7 @@ struct LocationControls: View {
     }
 	
 	private func goHome() {
-		self.configuration.shaderConfiguration.x = 0
-		self.configuration.shaderConfiguration.y = 0
-		self.configuration.shaderConfiguration.width = 1
+		self.configuration.goHome()
 	}
 	
 	private func makeMove(_ direction: MoveDirection) -> () -> () {

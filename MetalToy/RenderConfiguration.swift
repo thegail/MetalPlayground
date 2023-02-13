@@ -30,4 +30,10 @@ struct RenderConfiguration {
 	mutating func zoomOut() {
 		self.shaderConfiguration.width *= 1.1
 	}
+	
+	mutating func goHome() {
+		self.shaderConfiguration.x = 0
+		self.shaderConfiguration.y = 0
+		self.shaderConfiguration.width = 1
+	}
 }

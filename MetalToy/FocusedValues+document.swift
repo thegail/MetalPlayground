@@ -21,3 +21,18 @@ extension FocusedValues {
 		}
 	}
 }
+
+extension FocusedValues {
+	struct ConfigurationFocusedValues: FocusedValueKey {
+		typealias Value = Binding<RenderConfiguration>
+	}
+
+	var configuration: Binding<RenderConfiguration>? {
+		get {
+			self[ConfigurationFocusedValues.self]
+		}
+		set {
+			self[ConfigurationFocusedValues.self] = newValue
+		}
+	}
+}

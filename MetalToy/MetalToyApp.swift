@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct MetalToyApp: App {
-	@FocusedBinding(\.document) var document: MetalDocument?
+	@FocusedBinding(\.configuration) var configuration: RenderConfiguration?
 	
     var body: some Scene {
 		DocumentGroup(newDocument: MetalDocument()) { file in
 			ContentView(document: file.$document)
-				.focusedSceneValue(\.document, file.$document)
+		}
+		.commands {
+			EditorCommands(configuration: $configuration)
 		}
     }
 }

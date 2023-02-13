@@ -42,6 +42,7 @@ struct ContentView: View {
 			.onHover(perform: { self.showEditorControls = $0 })
 		}
 		.padding()
+		.focusedSceneValue(\.configuration, self.$configuration)
     }
 }
 
