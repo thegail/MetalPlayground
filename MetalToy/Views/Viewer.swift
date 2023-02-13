@@ -38,7 +38,7 @@ struct Viewer: View {
     var body: some View {
 		ZStack(alignment: .topTrailing) {
 			GeometryReader { geometry in
-				RenderView(configuration: configuration)
+				RenderWrapper(configuration: configuration)
 					.gesture(drag(size: geometry.size))
 					.gesture(magnification)
 			}
