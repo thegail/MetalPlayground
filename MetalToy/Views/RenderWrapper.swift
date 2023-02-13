@@ -10,16 +10,20 @@ import SwiftUI
 struct RenderWrapper: View, Animatable {
 	var configuration: RenderConfiguration
 	
-	var animatableData: AnimatablePair<Float, Float> {
+	var animatableData: AnimatablePair<Float, AnimatablePair<Float, Float>> {
 		get {
 			AnimatablePair(
-				self.configuration.shaderConfiguration.x,
-				self.configuration.shaderConfiguration.y
+				self.configuration.shaderConfiguration.width,
+				AnimatablePair(
+					self.configuration.shaderConfiguration.x,
+					self.configuration.shaderConfiguration.y
+				)
 			)
 		}
 		set(new) {
-			self.configuration.shaderConfiguration.x = new.first
-			self.configuration.shaderConfiguration.y = new.second
+			self.configuration.shaderConfiguration.width = new.first
+			self.configuration.shaderConfiguration.x = new.second.first
+			self.configuration.shaderConfiguration.y = new.second.second
 		}
 	}
 	
