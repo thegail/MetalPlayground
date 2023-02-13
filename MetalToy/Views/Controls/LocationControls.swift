@@ -58,7 +58,7 @@ struct LocationControls: View {
 			y = 0
 		}
 		return {
-			self.configuration.coordinates += SIMD2(x, y) / 10
+			self.configuration.coordinates += SIMD2(x, y) * SIMD2(repeating: self.configuration.width) / 10
 		}
 	}
 	

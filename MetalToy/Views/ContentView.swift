@@ -23,14 +23,14 @@ struct ContentView: View {
 	func drag(size: CGSize) -> some Gesture {
 		DragGesture()
 			.onChanged { value in
-				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / SIMD2(size) - 0.5
-				let normalizedCurrent = SIMD2(value.location) * SIMD2(-1, 1) / SIMD2(size) - 0.5
+				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) * SIMD2(repeating: self.configuration.width) / SIMD2(size) - 0.5
+				let normalizedCurrent = SIMD2(value.location) * SIMD2(-1, 1) * SIMD2(repeating: self.configuration.width) / SIMD2(size) - 0.5
 				let newValue = self.configuration.initialCoordinates + normalizedCurrent - normalizedStart
 				self.configuration.gestureCoordinates = newValue
 			}
 			.onEnded { value in
-				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / SIMD2(size) - 0.5
-				let normalizedCurrent = SIMD2(value.predictedEndLocation) * SIMD2(-1, 1) / SIMD2(size) - 0.5
+				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) * SIMD2(repeating: self.configuration.width) / SIMD2(size) - 0.5
+				let normalizedCurrent = SIMD2(value.predictedEndLocation) * SIMD2(-1, 1) * SIMD2(repeating: self.configuration.width) / SIMD2(size) - 0.5
 				let newValue = self.configuration.initialCoordinates + normalizedCurrent - normalizedStart
 				self.configuration.gestureCoordinates = newValue
 				self.configuration.endGesture()
