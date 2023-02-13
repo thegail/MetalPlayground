@@ -42,6 +42,8 @@ class Renderer {
 		
 		commandBuffer.present(view.currentDrawable!)
 		commandBuffer.commit()
+		
+		self.configuration.shaderConfiguration.frame += 1
 	}
 	
 	func updateSize(size: CGSize) throws {

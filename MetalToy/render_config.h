@@ -12,6 +12,7 @@ struct render_config {
 	float x;
 	float y;
 	float width;
+	unsigned int frame;
 };
 
 #endif /* render_config_h */

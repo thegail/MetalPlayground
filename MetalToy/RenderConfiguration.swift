@@ -40,7 +40,7 @@ struct RenderConfiguration {
 		}
 	}
 	
-	static let defaultConfiguration: Self = Self(shaderSource: Self.defaultSource, shaderConfiguration: render_config(x: 0, y: 0, width: 1))
+	static let defaultConfiguration: Self = Self(shaderSource: Self.defaultSource, shaderConfiguration: render_config(x: 0, y: 0, width: 1, frame: 0))
 	
 	private static let defaultSource = """
 	#include <metal_stdlib>
