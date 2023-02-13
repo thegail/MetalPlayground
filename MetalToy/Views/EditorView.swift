@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct EditorView: View {
-	@Binding var text: String
+	@Binding var document: MetalDocument
+	@Binding var configuration: RenderConfiguration
+	@Binding var exportShown: Bool
+	@State var showControls = false
 	
     var body: some View {
-        TextEditor(text: $text)
-			.fontDesign(.monospaced)
+		ZStack(alignment: .topTrailing) {
+			TextEditor(text: self.$document.text)
+				.fontDesign(.monospaced)
+			if showControls {
+				EditorControlsView(configuration: self.$configuration, editorSource: $document.text, exportShown: self.$exportShown)
+					.padding()
+					.transition(.opacity.animation(.easeIn(duration: 0.1)))
+			}
+		}
+		.onHover(perform: { self.showControls = $0 })
     }
 }
 
@@ -20,6 +31,6 @@ struct EditorView_Previews: PreviewProvider {
 	@State static var value = "Hello, World!"
 	
     static var previews: some View {
-		EditorView(text: $value)
+		EditorView(document: .constant(.init()), configuration: .constant(.defaultConfiguration), exportShown: .constant(false))
     }
 }

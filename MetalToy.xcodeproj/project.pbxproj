@@ -11,6 +11,7 @@
 		9F252434299AA1950000037C /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F252433299AA1950000037C /* ImageRenderer.swift */; };
 		9F252436299AA5FD0000037C /* ExportDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F252435299AA5FD0000037C /* ExportDocument.swift */; };
 		9F252438299AB4390000037C /* ExportOptionsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F252437299AB4390000037C /* ExportOptionsSheet.swift */; };
+		9F2F47C1299AF48100DD714C /* Viewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2F47C0299AF48100DD714C /* Viewer.swift */; };
 		9F3B39472998293C00C8357A /* MetalToyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39462998293C00C8357A /* MetalToyApp.swift */; };
 		9F3B39492998293C00C8357A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39482998293C00C8357A /* ContentView.swift */; };
 		9F3B394B2998293C00C8357A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B394A2998293C00C8357A /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		9F252433299AA1950000037C /* ImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRenderer.swift; sourceTree = "<group>"; };
 		9F252435299AA5FD0000037C /* ExportDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDocument.swift; sourceTree = "<group>"; };
 		9F252437299AB4390000037C /* ExportOptionsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportOptionsSheet.swift; sourceTree = "<group>"; };
+		9F2F47C0299AF48100DD714C /* Viewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewer.swift; sourceTree = "<group>"; };
 		9F3B39432998293C00C8357A /* MetalToy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalToy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3B39462998293C00C8357A /* MetalToyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalToyApp.swift; sourceTree = "<group>"; };
 		9F3B39482998293C00C8357A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				9F3B39482998293C00C8357A /* ContentView.swift */,
+				9F2F47C0299AF48100DD714C /* Viewer.swift */,
 				9F252437299AB4390000037C /* ExportOptionsSheet.swift */,
 				9F3B39582998530D00C8357A /* EditorView.swift */,
 				9F3B395A2998531100C8357A /* ControlsView.swift */,
@@ -299,6 +302,7 @@
 				9F3B3977299947CB00C8357A /* MetalUtil.swift in Sources */,
 				9F3B39592998530D00C8357A /* EditorView.swift in Sources */,
 				9F3B39472998293C00C8357A /* MetalToyApp.swift in Sources */,
+				9F2F47C1299AF48100DD714C /* Viewer.swift in Sources */,
 				9F3B39B92999F7F000C8357A /* SIMD+initFromCGPoint.swift in Sources */,
 				9F3B397E29994AC600C8357A /* make_image.metal in Sources */,
 				9F3B395B2998531100C8357A /* ControlsView.swift in Sources */,
