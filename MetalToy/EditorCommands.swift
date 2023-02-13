@@ -13,6 +13,7 @@ struct EditorCommands: Commands {
 	
 	var body: some Commands {
 		TextEditingCommands()
+		
 		CommandGroup(after: .saveItem) {
 			Button("Build and Run") {
 				guard let text = self.document?.text else {
@@ -23,17 +24,20 @@ struct EditorCommands: Commands {
 			.keyboardShortcut("r", modifiers: .command)
 			.disabled(self.configuration == nil || self.document == nil)
 		}
+		
 		CommandGroup(before: .toolbar) {
 			Button("Zoom In") {
 				self.configuration?.zoomIn()
 			}
 			.keyboardShortcut("+", modifiers: .command)
 			.disabled(self.configuration == nil)
+			
 			Button("Zoom Out") {
 				self.configuration?.zoomOut()
 			}
 			.keyboardShortcut("-", modifiers: .command)
 			.disabled(self.configuration == nil)
+			
 			Button("Actual Size") {
 				self.configuration?.goHome()
 			}
