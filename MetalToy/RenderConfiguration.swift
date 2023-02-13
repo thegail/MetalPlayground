@@ -46,7 +46,7 @@ struct RenderConfiguration {
 	#include <metal_stdlib>
 	using namespace metal;
 	
-	float4 shader_main(float2 coords) {
+	float4 shader_main(float2 coords, unsigned int frame) {
 		return float4(coords + float2(0.5), 0, 1);
 	}
 	
