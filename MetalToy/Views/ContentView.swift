@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+	@Binding var document: MetalDocument
 	@State var configuration: RenderConfiguration
 	@State var showControls = false
 	@State var showEditorControls = false
-	@Binding var document: MetalDocument
+	@State var showExportMenu = false
+	@State var showExportOptionsMenu = false
+	@State var exportWidth = 400
+	@State var continueExport = false
 	
 	init(document: Binding<MetalDocument>) {
 		self._document = document
@@ -73,6 +77,20 @@ struct ContentView: View {
 		.padding()
 		.focusedSceneValue(\.configuration, self.$configuration)
 		.focusedSceneValue(\.document, self.$document)
+		.sheet(isPresented: self.$showExportOptionsMenu, onDismiss: {
+			if self.continueExport {
+				self.showExportMenu = true
+			}
+		}) {
+			ExportOptionsSheet(exportWidth: self.$exportWidth, continueExport: self.$continueExport)
+		}
+		.fileExporter(
+			isPresented: self.$showExportMenu,
+			document: ExportDocument(renderConfiguration: self.configuration, width: self.exportWidth),
+			contentType: .png,
+			defaultFilename: "shader_export",
+			onCompletion: { _ in }
+		)
     }
 }
 

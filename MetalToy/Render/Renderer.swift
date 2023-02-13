@@ -54,7 +54,7 @@ class Renderer {
 		self.computePipeline = try MetalUtil.makeComputePipeline(device: self.device, function: self.computeFunction, library: dynamicLibrary)
 	}
 	
-	private func encodeCompute(commandBuffer: MTLCommandBuffer) throws {
+	func encodeCompute(commandBuffer: MTLCommandBuffer) throws {
 		let length = MemoryLayout<render_config>.stride
 		var configuration = self.configuration.shaderConfiguration
 		guard let configurationBuffer = device.makeBuffer(bytes: &configuration, length: length) else {
@@ -71,7 +71,7 @@ class Renderer {
 		encoder.endEncoding()
 	}
 	
-	private func encodeRender(commandBuffer: MTLCommandBuffer, view: MTKView) throws {
+	func encodeRender(commandBuffer: MTLCommandBuffer, view: MTKView) throws {
 		guard let renderPassDescriptor = view.currentRenderPassDescriptor else {
 			throw Error.renderPassDescriptor
 		}

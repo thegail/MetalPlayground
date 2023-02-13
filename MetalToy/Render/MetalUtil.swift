@@ -28,6 +28,19 @@ enum MetalUtil {
 		return texture
 	}
 	
+	static func makeExportableImage(size: MTLSize, device: MTLDevice) throws -> MTLTexture {
+		let descriptor = MTLTextureDescriptor()
+		descriptor.pixelFormat = .bgra8Unorm
+		descriptor.width = size.width
+		descriptor.height = size.height
+		descriptor.usage = .unknown
+		descriptor.storageMode = .shared
+		guard let texture = device.makeTexture(descriptor: descriptor) else {
+			throw Error.texture
+		}
+		return texture
+	}
+	
 	static func getRenderFunctions(device: MTLDevice) throws -> (compute: MTLFunction, vertex: MTLFunction, fragment: MTLFunction) {
 		guard let library = device.makeDefaultLibrary() else {
 			throw Error.shaderLibrary
