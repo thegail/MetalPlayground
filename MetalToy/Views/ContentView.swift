@@ -43,6 +43,7 @@ struct ContentView: View {
 		}
 		.padding()
 		.focusedSceneValue(\.configuration, self.$configuration)
+		.focusedSceneValue(\.document, self.$document)
     }
 }
 
