@@ -34,19 +34,25 @@ struct EditorCommands: Commands {
 		
 		CommandGroup(before: .toolbar) {
 			Button("Zoom In") {
-				self.configuration?.zoomIn()
+				withAnimation(.easeInOut(duration: 0.2)) {
+					self.configuration?.zoomIn()
+				}
 			}
 			.keyboardShortcut("+", modifiers: .command)
 			.disabled(self.configuration == nil)
 			
 			Button("Zoom Out") {
-				self.configuration?.zoomOut()
+				withAnimation(.easeInOut(duration: 0.2)) {
+					self.configuration?.zoomOut()
+				}
 			}
 			.keyboardShortcut("-", modifiers: .command)
 			.disabled(self.configuration == nil)
 			
 			Button("Actual Size") {
-				self.configuration?.goHome()
+				withAnimation(.easeInOut(duration: 0.5)) {
+					self.configuration?.goHome()
+				}
 			}
 			.keyboardShortcut("0", modifiers: .command)
 			.disabled(self.configuration == nil)
