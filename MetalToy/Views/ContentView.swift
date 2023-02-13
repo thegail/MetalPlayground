@@ -67,7 +67,7 @@ struct ContentView: View {
 			ZStack(alignment: .topTrailing) {
 				EditorView(text: $document.text)
 				if showEditorControls {
-					EditorControlsView(configuration: $configuration, editorSource: $document.text)
+					EditorControlsView(configuration: $configuration, editorSource: $document.text, exportShown: self.$showExportOptionsMenu)
 						.padding()
 						.transition(.opacity.animation(.easeIn(duration: 0.1)))
 				}
