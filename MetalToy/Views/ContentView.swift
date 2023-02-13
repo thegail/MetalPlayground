@@ -49,6 +49,7 @@ struct ContentView: View {
 			ZStack(alignment: .topTrailing) {
 				GeometryReader { geometry in
 					RenderView(configuration: configuration)
+						.aspectRatio(1, contentMode: .fit)
 						.gesture(drag(size: geometry.size))
 						.gesture(magnification)
 				}
