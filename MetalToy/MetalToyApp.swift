@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct MetalToyApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+		DocumentGroup(newDocument: MetalDocument()) { file in
+			ContentView(document: file.$document)
+		}
     }
 }

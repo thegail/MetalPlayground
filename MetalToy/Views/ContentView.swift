@@ -11,7 +11,7 @@ struct ContentView: View {
 	@State var configuration: RenderConfiguration = RenderConfiguration.defaultConfiguration
 	@State var showControls = false
 	@State var showEditorControls = false
-	@State var editorSource: String = RenderConfiguration.defaultConfiguration.shaderSource
+	@Binding var document: MetalDocument
 	
     var body: some View {
 		HStack {
@@ -25,9 +25,9 @@ struct ContentView: View {
 			}
 			.onHover(perform: { self.showControls = $0 })
 			ZStack(alignment: .topTrailing) {
-				EditorView(text: $editorSource)
+				EditorView(text: $document.text)
 				if showEditorControls {
-					EditorControlsView(configuration: $configuration, editorSource: $editorSource)
+					EditorControlsView(configuration: $configuration, editorSource: $document.text)
 						.padding()
 						.transition(.opacity.animation(.easeIn(duration: 0.1)))
 				}
@@ -40,6 +40,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+		ContentView(document: .constant(MetalDocument()))
     }
 }

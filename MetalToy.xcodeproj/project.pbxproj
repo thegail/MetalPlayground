@@ -26,6 +26,7 @@
 		9F3B397E29994AC600C8357A /* make_image.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B397D29994AC600C8357A /* make_image.metal */; };
 		9F3B398929994E1600C8357A /* user_shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B398829994E1600C8357A /* user_shader.metal */; };
 		9F3B398D2999526600C8357A /* libUserShader.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B398129994DFA00C8357A /* libUserShader.metallib */; };
+		9F3B39B02999B6AA00C8357A /* MetalDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39AF2999B6AA00C8357A /* MetalDocument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		9F3B398A29994E9800C8357A /* user_shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = user_shader.h; sourceTree = "<group>"; };
 		9F3B398F2999638F00C8357A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9F3B39AE2999B58000C8357A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9F3B39AF2999B6AA00C8357A /* MetalDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDocument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				9F3B39AE2999B58000C8357A /* Info.plist */,
 				9F3B39462998293C00C8357A /* MetalToyApp.swift */,
+				9F3B39AF2999B6AA00C8357A /* MetalDocument.swift */,
 				9F3B395C2998550700C8357A /* RenderConfiguration.swift */,
 				9F3B395F299855C200C8357A /* render_config.h */,
 				9F3B397129993C7300C8357A /* Render */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F3B39B02999B6AA00C8357A /* MetalDocument.swift in Sources */,
 				9F3B39492998293C00C8357A /* ContentView.swift in Sources */,
 				9F3B395D2998550700C8357A /* RenderConfiguration.swift in Sources */,
 				9F3B396C299859C900C8357A /* ControlButtonStyle.swift in Sources */,
