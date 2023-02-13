@@ -11,6 +11,31 @@ struct RenderConfiguration {
 	var shaderSource: String
 	var shaderConfiguration: render_config
 	
+	var x: Float {
+		get {
+			self.shaderConfiguration.x
+		}
+		set(new) {
+			self.shaderConfiguration.x = new
+		}
+	}
+	var y: Float {
+		get {
+			self.shaderConfiguration.y
+		}
+		set(new) {
+			self.shaderConfiguration.y = new
+		}
+	}
+	var width: Float {
+		get {
+			self.shaderConfiguration.width
+		}
+		set(new) {
+			self.shaderConfiguration.width = new
+		}
+	}
+	
 	static let defaultConfiguration: Self = Self(shaderSource: Self.defaultSource, shaderConfiguration: render_config(x: 0, y: 0, width: 1))
 	
 	private static let defaultSource = """

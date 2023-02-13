@@ -12,6 +12,7 @@ struct ContentView: View {
 	@State var showControls = false
 	@State var showEditorControls = false
 	@Binding var document: MetalDocument
+	@State var initialCoordinates: SIMD2<Float> = SIMD2(0, 0)
 	
 	init(document: Binding<MetalDocument>) {
 		self._document = document
@@ -20,10 +21,38 @@ struct ContentView: View {
 		self.configuration = configuration
 	}
 	
+	var drag: some Gesture {
+		DragGesture()
+			.onChanged { value in
+				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / 300 - 0.5
+				let normalizedCurrent = SIMD2(value.location) * SIMD2(-1, 1) / 300 - 0.5
+				let newValue = initialCoordinates + normalizedCurrent - normalizedStart
+				self.configuration.x = newValue.x
+				self.configuration.y = newValue.y
+			}
+			.onEnded { value in
+				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / 300 - 0.5
+				let normalizedCurrent = SIMD2(value.predictedEndLocation) * SIMD2(-1, 1) / 300 - 0.5
+				let newValue = initialCoordinates + normalizedCurrent - normalizedStart
+				self.configuration.x = newValue.x
+				self.configuration.y = newValue.y
+				self.initialCoordinates = SIMD2(self.configuration.x, self.configuration.y)
+			}
+	}
+	
+	var magnification: some Gesture {
+		MagnificationGesture()
+			.onChanged { value in
+				self.configuration.width /= pow(Float(value.magnitude), 0.1)
+			}
+	}
+	
     var body: some View {
 		HStack {
 			ZStack(alignment: .topTrailing) {
 				RenderView(configuration: configuration)
+					.gesture(drag)
+					.gesture(magnification)
 				if showControls {
 					ControlsView(configuration: $configuration)
 						.padding()

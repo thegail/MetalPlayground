@@ -58,8 +58,8 @@ struct LocationControls: View {
 			y = 0
 		}
 		return {
-			self.configuration.shaderConfiguration.x += x / 10
-			self.configuration.shaderConfiguration.y += y / 10
+			self.configuration.x += x / 10
+			self.configuration.y += y / 10
 		}
 	}
 	
