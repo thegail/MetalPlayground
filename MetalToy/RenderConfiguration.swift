@@ -22,4 +22,12 @@ struct RenderConfiguration {
 	}
 	
 	"""
+	
+	mutating func zoomIn() {
+		self.shaderConfiguration.width /= 1.1
+	}
+	
+	mutating func zoomOut() {
+		self.shaderConfiguration.width *= 1.1
+	}
 }

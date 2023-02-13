@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-	@State var configuration: RenderConfiguration = RenderConfiguration.defaultConfiguration
+	@State var configuration: RenderConfiguration
 	@State var showControls = false
 	@State var showEditorControls = false
 	@Binding var document: MetalDocument
+	
+	init(document: Binding<MetalDocument>) {
+		self._document = document
+		var configuration = RenderConfiguration.defaultConfiguration
+		configuration.shaderSource = document.wrappedValue.text
+		self.configuration = configuration
+	}
 	
     var body: some View {
 		HStack {

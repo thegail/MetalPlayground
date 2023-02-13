@@ -14,8 +14,6 @@ struct EditorControlsView: View {
     var body: some View {
 		VStack(alignment: .trailing) {
 			Button(action: { configuration.shaderSource = editorSource }, label: { Image(systemName: "hammer.fill") })
-			Button(action: {}, label: { Image(systemName: "square.and.arrow.down.fill") })
-			Button(action: {}, label: { Image(systemName: "folder.fill") })
 		}
 		.buttonStyle(ControlButtonStyle())
     }
