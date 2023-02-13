@@ -64,6 +64,7 @@
 		9F3B398829994E1600C8357A /* user_shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = user_shader.metal; sourceTree = "<group>"; };
 		9F3B398A29994E9800C8357A /* user_shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = user_shader.h; sourceTree = "<group>"; };
 		9F3B398F2999638F00C8357A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9F3B39AE2999B58000C8357A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 		9F3B39452998293C00C8357A /* MetalToy */ = {
 			isa = PBXGroup;
 			children = (
+				9F3B39AE2999B58000C8357A /* Info.plist */,
 				9F3B39462998293C00C8357A /* MetalToyApp.swift */,
 				9F3B395C2998550700C8357A /* RenderConfiguration.swift */,
 				9F3B395F299855C200C8357A /* render_config.h */,
@@ -414,6 +416,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MetalToy/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MetalToy/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -455,6 +458,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MetalToy/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MetalToy/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
