@@ -20,17 +20,17 @@ struct ContentView: View {
 		self.configuration = configuration
 	}
 	
-	var drag: some Gesture {
+	func drag(size: CGSize) -> some Gesture {
 		DragGesture()
 			.onChanged { value in
-				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / 300 - 0.5
-				let normalizedCurrent = SIMD2(value.location) * SIMD2(-1, 1) / 300 - 0.5
+				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / SIMD2(size) - 0.5
+				let normalizedCurrent = SIMD2(value.location) * SIMD2(-1, 1) / SIMD2(size) - 0.5
 				let newValue = self.configuration.initialCoordinates + normalizedCurrent - normalizedStart
 				self.configuration.gestureCoordinates = newValue
 			}
 			.onEnded { value in
-				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / 300 - 0.5
-				let normalizedCurrent = SIMD2(value.predictedEndLocation) * SIMD2(-1, 1) / 300 - 0.5
+				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / SIMD2(size) - 0.5
+				let normalizedCurrent = SIMD2(value.predictedEndLocation) * SIMD2(-1, 1) / SIMD2(size) - 0.5
 				let newValue = self.configuration.initialCoordinates + normalizedCurrent - normalizedStart
 				self.configuration.gestureCoordinates = newValue
 				self.configuration.endGesture()
@@ -47,9 +47,11 @@ struct ContentView: View {
     var body: some View {
 		HStack {
 			ZStack(alignment: .topTrailing) {
-				RenderView(configuration: configuration)
-					.gesture(drag)
-					.gesture(magnification)
+				GeometryReader { geometry in
+					RenderView(configuration: configuration)
+						.gesture(drag(size: geometry.size))
+						.gesture(magnification)
+				}
 				if showControls {
 					ControlsView(configuration: $configuration)
 						.padding()
