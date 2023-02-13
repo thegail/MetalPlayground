@@ -20,11 +20,15 @@ struct ZoomControls: View {
 	private func makeZoom(_ isIn: Bool) -> () -> () {
 		if isIn {
 			return {
-				self.configuration.zoomIn()
+				withAnimation(.easeInOut(duration: 0.2)) {
+					self.configuration.zoomIn()
+				}
 			}
 		} else {
 			return {
-				self.configuration.zoomOut()
+				withAnimation(.easeInOut(duration: 0.2)) {
+					self.configuration.zoomOut()
+				}
 			}
 		}
 	}
