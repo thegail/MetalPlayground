@@ -49,7 +49,6 @@ struct ContentView: View {
 			ZStack(alignment: .topTrailing) {
 				GeometryReader { geometry in
 					RenderView(configuration: configuration)
-						.aspectRatio(1, contentMode: .fit)
 						.gesture(drag(size: geometry.size))
 						.gesture(magnification)
 				}
@@ -59,6 +58,7 @@ struct ContentView: View {
 						.transition(.opacity.animation(.easeIn(duration: 0.1)))
 				}
 			}
+			.aspectRatio(1, contentMode: .fit)
 			.onHover(perform: { self.showControls = $0 })
 			ZStack(alignment: .topTrailing) {
 				EditorView(text: $document.text)
