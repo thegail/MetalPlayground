@@ -27,16 +27,14 @@ struct ContentView: View {
 				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / 300 - 0.5
 				let normalizedCurrent = SIMD2(value.location) * SIMD2(-1, 1) / 300 - 0.5
 				let newValue = initialCoordinates + normalizedCurrent - normalizedStart
-				self.configuration.x = newValue.x
-				self.configuration.y = newValue.y
+				self.configuration.coordinates = newValue
 			}
 			.onEnded { value in
 				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) / 300 - 0.5
 				let normalizedCurrent = SIMD2(value.predictedEndLocation) * SIMD2(-1, 1) / 300 - 0.5
 				let newValue = initialCoordinates + normalizedCurrent - normalizedStart
-				self.configuration.x = newValue.x
-				self.configuration.y = newValue.y
-				self.initialCoordinates = SIMD2(self.configuration.x, self.configuration.y)
+				self.configuration.coordinates = newValue
+				self.initialCoordinates = self.configuration.coordinates
 			}
 	}
 	

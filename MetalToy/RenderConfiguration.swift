@@ -11,20 +11,13 @@ struct RenderConfiguration {
 	var shaderSource: String
 	var shaderConfiguration: render_config
 	
-	var x: Float {
+	var coordinates: SIMD2<Float> {
 		get {
-			self.shaderConfiguration.x
+			SIMD2(self.shaderConfiguration.x, self.shaderConfiguration.y)
 		}
 		set(new) {
-			self.shaderConfiguration.x = new
-		}
-	}
-	var y: Float {
-		get {
-			self.shaderConfiguration.y
-		}
-		set(new) {
-			self.shaderConfiguration.y = new
+			self.shaderConfiguration.x = new.x
+			self.shaderConfiguration.y = new.y
 		}
 	}
 	var width: Float {
