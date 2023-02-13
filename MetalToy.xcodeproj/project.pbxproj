@@ -27,6 +27,7 @@
 		9F3B398929994E1600C8357A /* user_shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B398829994E1600C8357A /* user_shader.metal */; };
 		9F3B398D2999526600C8357A /* libUserShader.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B398129994DFA00C8357A /* libUserShader.metallib */; };
 		9F3B39B02999B6AA00C8357A /* MetalDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39AF2999B6AA00C8357A /* MetalDocument.swift */; };
+		9F3B39B42999F16200C8357A /* FocusedValues+document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B39B32999F16200C8357A /* FocusedValues+document.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		9F3B398F2999638F00C8357A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9F3B39AE2999B58000C8357A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9F3B39AF2999B6AA00C8357A /* MetalDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDocument.swift; sourceTree = "<group>"; };
+		9F3B39B32999F16200C8357A /* FocusedValues+document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusedValues+document.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				9F3B39462998293C00C8357A /* MetalToyApp.swift */,
 				9F3B39AF2999B6AA00C8357A /* MetalDocument.swift */,
 				9F3B395C2998550700C8357A /* RenderConfiguration.swift */,
+				9F3B39B32999F16200C8357A /* FocusedValues+document.swift */,
 				9F3B395F299855C200C8357A /* render_config.h */,
 				9F3B397129993C7300C8357A /* Render */,
 				9F3B3955299851DD00C8357A /* Views */,
@@ -272,6 +275,7 @@
 				9F3B397E29994AC600C8357A /* make_image.metal in Sources */,
 				9F3B395B2998531100C8357A /* ControlsView.swift in Sources */,
 				9F3B397329993C8C00C8357A /* RenderDelegate.swift in Sources */,
+				9F3B39B42999F16200C8357A /* FocusedValues+document.swift in Sources */,
 				9F3B397029993A0A00C8357A /* EditorControlsView.swift in Sources */,
 				9F3B396A299858C600C8357A /* ZoomControls.swift in Sources */,
 				9F3B39792999489600C8357A /* RenderView.swift in Sources */,
