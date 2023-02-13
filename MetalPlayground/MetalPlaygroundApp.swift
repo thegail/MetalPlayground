@@ -1,5 +1,5 @@
 //
-//  MetalToyApp.swift
+//  MetalPlaygroundApp.swift
 //  MetalToy
 //
 //  Created by Teddy Gaillard on 2/11/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct MetalToyApp: App {
+struct MetalPlaygroundApp: App {
 	@FocusedBinding(\.configuration) var configuration: RenderConfiguration?
 	@FocusedBinding(\.document) var document: MetalDocument?
 	@FocusedBinding(\.exportShown) var exportShown: Bool?
