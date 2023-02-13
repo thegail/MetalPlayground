@@ -37,7 +37,9 @@ struct LocationControls: View {
     }
 	
 	private func goHome() {
-		self.configuration.goHome()
+		withAnimation(.easeInOut(duration: 0.5)) {
+			self.configuration.goHome()
+		}
 	}
 	
 	private func makeMove(_ direction: MoveDirection) -> () -> () {
@@ -58,7 +60,9 @@ struct LocationControls: View {
 			y = 0
 		}
 		return {
-			self.configuration.coordinates += SIMD2(x, y) * SIMD2(repeating: self.configuration.width) / 10
+			withAnimation(.easeInOut(duration: 0.2)) {
+				self.configuration.coordinates += SIMD2(x, y) * SIMD2(repeating: self.configuration.width) / 10
+			}
 		}
 	}
 	

@@ -23,7 +23,9 @@ struct Viewer: View {
 				let normalizedStart = SIMD2(value.startLocation) * SIMD2(-1, 1) * SIMD2(repeating: self.configuration.width) / SIMD2(size) - 0.5
 				let normalizedCurrent = SIMD2(value.predictedEndLocation) * SIMD2(-1, 1) * SIMD2(repeating: self.configuration.width) / SIMD2(size) - 0.5
 				let newValue = self.configuration.initialCoordinates + normalizedCurrent - normalizedStart
-				self.configuration.gestureCoordinates = newValue
+				withAnimation(.easeOut(duration: 0.5)) {
+					self.configuration.gestureCoordinates = newValue
+				}
 				self.configuration.endGesture()
 			}
 	}
