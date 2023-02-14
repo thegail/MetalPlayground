@@ -25,7 +25,7 @@ struct ContentView: View {
     var body: some View {
 		HStack {
 			Viewer(configuration: self.$configuration)
-			EditorView(document: self.$document, configuration: self.$configuration, exportShown: self.$showExportOptionsMenu)
+			Editor(document: self.$document, configuration: self.$configuration, exportShown: self.$showExportOptionsMenu)
 		}
 		.padding()
 		.focusedSceneValue(\.configuration, self.$configuration)

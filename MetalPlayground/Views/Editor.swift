@@ -1,5 +1,5 @@
 //
-//  EditorView.swift
+//  Editor.swift
 //  MetalPlayground
 //
 //  Created by Teddy Gaillard on 2/11/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditorView: View {
+struct Editor: View {
 	@Binding var document: MetalDocument
 	@Binding var configuration: RenderConfiguration
 	@Binding var exportShown: Bool
@@ -27,10 +27,10 @@ struct EditorView: View {
     }
 }
 
-struct EditorView_Previews: PreviewProvider {
+struct Editor_Previews: PreviewProvider {
 	@State static var value = "Hello, World!"
 	
     static var previews: some View {
-		EditorView(document: .constant(.init()), configuration: .constant(.defaultConfiguration), exportShown: .constant(false))
+		Editor(document: .constant(.init()), configuration: .constant(.defaultConfiguration), exportShown: .constant(false))
     }
 }
