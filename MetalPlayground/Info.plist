@@ -15,6 +15,8 @@
 			<array>
 				<string>com.apple.metal</string>
 			</array>
+			<key>NSUbiquitousDocumentUserActivityType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).example-document</string>
 		</dict>
 	</array>
 	<key>UTImportedTypeDeclarations</key>

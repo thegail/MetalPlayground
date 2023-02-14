@@ -7,60 +7,77 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F3B398D2999526600C8357A /* libUserShader.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B398129994DFA00C8357A /* libUserShader.metallib */; };
+		9F3B4DEC299B04D800979AEA /* MetalPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4DEB299B04D800979AEA /* MetalPlaygroundApp.swift */; };
+		9F3B4DF2299B04D900979AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B4DF1299B04D900979AEA /* Assets.xcassets */; };
+		9F3B4DF7299B04D900979AEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B4DF6299B04D900979AEA /* Preview Assets.xcassets */; };
+		9F3B4E1E299B05D000979AEA /* EditorCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4DFD299B05CF00979AEA /* EditorCommands.swift */; };
+		9F3B4E1F299B05D000979AEA /* ExportDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4DFF299B05CF00979AEA /* ExportDocument.swift */; };
+		9F3B4E20299B05D000979AEA /* FocusedValues+document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E00299B05CF00979AEA /* FocusedValues+document.swift */; };
+		9F3B4E21299B05D000979AEA /* SIMD+initFromCGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E01299B05CF00979AEA /* SIMD+initFromCGPoint.swift */; };
+		9F3B4E22299B05D000979AEA /* MetalDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E02299B05CF00979AEA /* MetalDocument.swift */; };
+		9F3B4E23299B05D000979AEA /* render.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E06299B05D000979AEA /* render.metal */; };
+		9F3B4E25299B05D000979AEA /* make_image.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E09299B05D000979AEA /* make_image.metal */; };
+		9F3B4E26299B05D000979AEA /* RenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E0A299B05D000979AEA /* RenderDelegate.swift */; };
+		9F3B4E27299B05D000979AEA /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E0B299B05D000979AEA /* ImageRenderer.swift */; };
+		9F3B4E28299B05D000979AEA /* MetalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E0C299B05D000979AEA /* MetalUtil.swift */; };
+		9F3B4E29299B05D000979AEA /* RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E0D299B05D000979AEA /* RenderView.swift */; };
+		9F3B4E2A299B05D000979AEA /* MTLTexture+toImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E0E299B05D000979AEA /* MTLTexture+toImage.swift */; };
+		9F3B4E2B299B05D000979AEA /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E0F299B05D000979AEA /* Renderer.swift */; };
+		9F3B4E2C299B05D000979AEA /* RenderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E11299B05D000979AEA /* RenderConfiguration.swift */; };
+		9F3B4E2D299B05D000979AEA /* RenderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E13299B05D000979AEA /* RenderWrapper.swift */; };
+		9F3B4E2E299B05D000979AEA /* EditorControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E14299B05D000979AEA /* EditorControlsView.swift */; };
+		9F3B4E2F299B05D000979AEA /* ControlButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E16299B05D000979AEA /* ControlButtonStyle.swift */; };
+		9F3B4E30299B05D000979AEA /* ZoomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E17299B05D000979AEA /* ZoomControls.swift */; };
+		9F3B4E31299B05D000979AEA /* LocationControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E18299B05D000979AEA /* LocationControls.swift */; };
+		9F3B4E32299B05D000979AEA /* Viewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E19299B05D000979AEA /* Viewer.swift */; };
+		9F3B4E33299B05D000979AEA /* ExportOptionsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E1A299B05D000979AEA /* ExportOptionsSheet.swift */; };
+		9F3B4E34299B05D000979AEA /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E1B299B05D000979AEA /* ControlsView.swift */; };
+		9F3B4E35299B05D000979AEA /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E1C299B05D000979AEA /* EditorView.swift */; };
+		9F3B4E36299B05D000979AEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E1D299B05D000979AEA /* ContentView.swift */; };
+		9F3B4E40299B34C900979AEA /* user_shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E07299B05D000979AEA /* user_shader.metal */; };
+		9F3B4E41299B35A300979AEA /* libUserShader.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B4E39299B34C400979AEA /* libUserShader.metallib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		9F3B398B299951DC00C8357A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9F3B393B2998293C00C8357A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9F3B398029994DFA00C8357A;
-			remoteInfo = UserShader;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		9F3B39432998293C00C8357A /* MetalPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F3B398129994DFA00C8357A /* libUserShader.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = libUserShader.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F3B398F2999638F00C8357A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		9F3B4DB8299B001F00979AEA /* render_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = render_config.h; sourceTree = "<group>"; };
-		9F3B4DB9299B001F00979AEA /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
-		9F3B4DBA299B001F00979AEA /* MetalPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalPlayground.entitlements; sourceTree = "<group>"; };
-		9F3B4DBB299B001F00979AEA /* MetalPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalPlaygroundApp.swift; sourceTree = "<group>"; };
-		9F3B4DBC299B001F00979AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9F3B4DBF299B001F00979AEA /* render.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = render.metal; sourceTree = "<group>"; };
-		9F3B4DC0299B001F00979AEA /* user_shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = user_shader.metal; sourceTree = "<group>"; };
-		9F3B4DC1299B001F00979AEA /* user_shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = user_shader.h; sourceTree = "<group>"; };
-		9F3B4DC2299B001F00979AEA /* make_image.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = make_image.metal; sourceTree = "<group>"; };
-		9F3B4DC3299B001F00979AEA /* RenderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderDelegate.swift; sourceTree = "<group>"; };
-		9F3B4DC4299B001F00979AEA /* ImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRenderer.swift; sourceTree = "<group>"; };
-		9F3B4DC5299B001F00979AEA /* MetalUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalUtil.swift; sourceTree = "<group>"; };
-		9F3B4DC6299B001F00979AEA /* RenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
-		9F3B4DC7299B001F00979AEA /* MTLTexture+toImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+toImage.swift"; sourceTree = "<group>"; };
-		9F3B4DC8299B001F00979AEA /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
-		9F3B4DCA299B001F00979AEA /* ExportDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDocument.swift; sourceTree = "<group>"; };
-		9F3B4DCB299B001F00979AEA /* FocusedValues+document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusedValues+document.swift"; sourceTree = "<group>"; };
-		9F3B4DCC299B001F00979AEA /* SIMD+initFromCGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SIMD+initFromCGPoint.swift"; sourceTree = "<group>"; };
-		9F3B4DCE299B001F00979AEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9F3B4DCF299B001F00979AEA /* MetalDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDocument.swift; sourceTree = "<group>"; };
-		9F3B4DD0299B001F00979AEA /* RenderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderConfiguration.swift; sourceTree = "<group>"; };
-		9F3B4DD1299B001F00979AEA /* EditorCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorCommands.swift; sourceTree = "<group>"; };
-		9F3B4DD3299B001F00979AEA /* RenderWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderWrapper.swift; sourceTree = "<group>"; };
-		9F3B4DD4299B001F00979AEA /* EditorControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorControlsView.swift; sourceTree = "<group>"; };
-		9F3B4DD6299B001F00979AEA /* ControlButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonStyle.swift; sourceTree = "<group>"; };
-		9F3B4DD7299B001F00979AEA /* ZoomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomControls.swift; sourceTree = "<group>"; };
-		9F3B4DD8299B001F00979AEA /* LocationControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationControls.swift; sourceTree = "<group>"; };
-		9F3B4DD9299B001F00979AEA /* Viewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewer.swift; sourceTree = "<group>"; };
-		9F3B4DDA299B001F00979AEA /* ExportOptionsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportOptionsSheet.swift; sourceTree = "<group>"; };
-		9F3B4DDB299B001F00979AEA /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
-		9F3B4DDC299B001F00979AEA /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
-		9F3B4DDD299B001F00979AEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9F3B4DDE299B001F00979AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3B4DE8299B04D800979AEA /* MetalPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3B4DEB299B04D800979AEA /* MetalPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalPlaygroundApp.swift; sourceTree = "<group>"; };
+		9F3B4DF1299B04D900979AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F3B4DF3299B04D900979AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3B4DF4299B04D900979AEA /* MetalPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalPlayground.entitlements; sourceTree = "<group>"; };
+		9F3B4DF6299B04D900979AEA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9F3B4DFD299B05CF00979AEA /* EditorCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorCommands.swift; sourceTree = "<group>"; };
+		9F3B4DFF299B05CF00979AEA /* ExportDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportDocument.swift; sourceTree = "<group>"; };
+		9F3B4E00299B05CF00979AEA /* FocusedValues+document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FocusedValues+document.swift"; sourceTree = "<group>"; };
+		9F3B4E01299B05CF00979AEA /* SIMD+initFromCGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SIMD+initFromCGPoint.swift"; sourceTree = "<group>"; };
+		9F3B4E02299B05CF00979AEA /* MetalDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalDocument.swift; sourceTree = "<group>"; };
+		9F3B4E03299B05CF00979AEA /* bridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
+		9F3B4E06299B05D000979AEA /* render.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = render.metal; sourceTree = "<group>"; };
+		9F3B4E07299B05D000979AEA /* user_shader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = user_shader.metal; sourceTree = "<group>"; };
+		9F3B4E08299B05D000979AEA /* user_shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = user_shader.h; sourceTree = "<group>"; };
+		9F3B4E09299B05D000979AEA /* make_image.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = make_image.metal; sourceTree = "<group>"; };
+		9F3B4E0A299B05D000979AEA /* RenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderDelegate.swift; sourceTree = "<group>"; };
+		9F3B4E0B299B05D000979AEA /* ImageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRenderer.swift; sourceTree = "<group>"; };
+		9F3B4E0C299B05D000979AEA /* MetalUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalUtil.swift; sourceTree = "<group>"; };
+		9F3B4E0D299B05D000979AEA /* RenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderView.swift; sourceTree = "<group>"; };
+		9F3B4E0E299B05D000979AEA /* MTLTexture+toImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTLTexture+toImage.swift"; sourceTree = "<group>"; };
+		9F3B4E0F299B05D000979AEA /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		9F3B4E10299B05D000979AEA /* render_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = render_config.h; sourceTree = "<group>"; };
+		9F3B4E11299B05D000979AEA /* RenderConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderConfiguration.swift; sourceTree = "<group>"; };
+		9F3B4E13299B05D000979AEA /* RenderWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderWrapper.swift; sourceTree = "<group>"; };
+		9F3B4E14299B05D000979AEA /* EditorControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorControlsView.swift; sourceTree = "<group>"; };
+		9F3B4E16299B05D000979AEA /* ControlButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlButtonStyle.swift; sourceTree = "<group>"; };
+		9F3B4E17299B05D000979AEA /* ZoomControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomControls.swift; sourceTree = "<group>"; };
+		9F3B4E18299B05D000979AEA /* LocationControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationControls.swift; sourceTree = "<group>"; };
+		9F3B4E19299B05D000979AEA /* Viewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewer.swift; sourceTree = "<group>"; };
+		9F3B4E1A299B05D000979AEA /* ExportOptionsSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportOptionsSheet.swift; sourceTree = "<group>"; };
+		9F3B4E1B299B05D000979AEA /* ControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		9F3B4E1C299B05D000979AEA /* EditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		9F3B4E1D299B05D000979AEA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9F3B4E39299B34C400979AEA /* libUserShader.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = libUserShader.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9F3B39402998293C00C8357A /* Frameworks */ = {
+		9F3B4DE5299B04D800979AEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -70,108 +87,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9F3B393A2998293C00C8357A = {
+		9F3B4DDF299B04D800979AEA = {
 			isa = PBXGroup;
 			children = (
-				9F3B4DB7299B001F00979AEA /* MetalPlayground */,
-				9F3B398F2999638F00C8357A /* .gitignore */,
-				9F3B39442998293C00C8357A /* Products */,
+				9F3B4DEA299B04D800979AEA /* MetalPlayground */,
+				9F3B4DE9299B04D800979AEA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9F3B39442998293C00C8357A /* Products */ = {
+		9F3B4DE9299B04D800979AEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F3B39432998293C00C8357A /* MetalPlayground.app */,
-				9F3B398129994DFA00C8357A /* libUserShader.metallib */,
+				9F3B4DE8299B04D800979AEA /* MetalPlayground.app */,
+				9F3B4E39299B34C400979AEA /* libUserShader.metallib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9F3B4DB7299B001F00979AEA /* MetalPlayground */ = {
+		9F3B4DEA299B04D800979AEA /* MetalPlayground */ = {
 			isa = PBXGroup;
 			children = (
-				9F3B4DB8299B001F00979AEA /* render_config.h */,
-				9F3B4DB9299B001F00979AEA /* bridging.h */,
-				9F3B4DBA299B001F00979AEA /* MetalPlayground.entitlements */,
-				9F3B4DBB299B001F00979AEA /* MetalPlaygroundApp.swift */,
-				9F3B4DBC299B001F00979AEA /* Assets.xcassets */,
-				9F3B4DBD299B001F00979AEA /* Render */,
-				9F3B4DC9299B001F00979AEA /* Utils */,
-				9F3B4DCD299B001F00979AEA /* Preview Content */,
-				9F3B4DCF299B001F00979AEA /* MetalDocument.swift */,
-				9F3B4DD0299B001F00979AEA /* RenderConfiguration.swift */,
-				9F3B4DD1299B001F00979AEA /* EditorCommands.swift */,
-				9F3B4DD2299B001F00979AEA /* Views */,
-				9F3B4DDE299B001F00979AEA /* Info.plist */,
+				9F3B4DEB299B04D800979AEA /* MetalPlaygroundApp.swift */,
+				9F3B4DFD299B05CF00979AEA /* EditorCommands.swift */,
+				9F3B4E02299B05CF00979AEA /* MetalDocument.swift */,
+				9F3B4E10299B05D000979AEA /* render_config.h */,
+				9F3B4E11299B05D000979AEA /* RenderConfiguration.swift */,
+				9F3B4E04299B05D000979AEA /* Render */,
+				9F3B4DFE299B05CF00979AEA /* Utils */,
+				9F3B4E12299B05D000979AEA /* Views */,
+				9F3B4DF1299B04D900979AEA /* Assets.xcassets */,
+				9F3B4DF3299B04D900979AEA /* Info.plist */,
+				9F3B4DF4299B04D900979AEA /* MetalPlayground.entitlements */,
+				9F3B4E03299B05CF00979AEA /* bridging.h */,
+				9F3B4DF5299B04D900979AEA /* Preview Content */,
 			);
 			path = MetalPlayground;
 			sourceTree = "<group>";
 		};
-		9F3B4DBD299B001F00979AEA /* Render */ = {
+		9F3B4DF5299B04D900979AEA /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				9F3B4DBE299B001F00979AEA /* Shaders */,
-				9F3B4DC3299B001F00979AEA /* RenderDelegate.swift */,
-				9F3B4DC4299B001F00979AEA /* ImageRenderer.swift */,
-				9F3B4DC5299B001F00979AEA /* MetalUtil.swift */,
-				9F3B4DC6299B001F00979AEA /* RenderView.swift */,
-				9F3B4DC7299B001F00979AEA /* MTLTexture+toImage.swift */,
-				9F3B4DC8299B001F00979AEA /* Renderer.swift */,
-			);
-			path = Render;
-			sourceTree = "<group>";
-		};
-		9F3B4DBE299B001F00979AEA /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				9F3B4DBF299B001F00979AEA /* render.metal */,
-				9F3B4DC0299B001F00979AEA /* user_shader.metal */,
-				9F3B4DC1299B001F00979AEA /* user_shader.h */,
-				9F3B4DC2299B001F00979AEA /* make_image.metal */,
-			);
-			path = Shaders;
-			sourceTree = "<group>";
-		};
-		9F3B4DC9299B001F00979AEA /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				9F3B4DCA299B001F00979AEA /* ExportDocument.swift */,
-				9F3B4DCB299B001F00979AEA /* FocusedValues+document.swift */,
-				9F3B4DCC299B001F00979AEA /* SIMD+initFromCGPoint.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		9F3B4DCD299B001F00979AEA /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				9F3B4DCE299B001F00979AEA /* Preview Assets.xcassets */,
+				9F3B4DF6299B04D900979AEA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9F3B4DD2299B001F00979AEA /* Views */ = {
+		9F3B4DFE299B05CF00979AEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9F3B4DD3299B001F00979AEA /* RenderWrapper.swift */,
-				9F3B4DD4299B001F00979AEA /* EditorControlsView.swift */,
-				9F3B4DD5299B001F00979AEA /* Controls */,
-				9F3B4DD9299B001F00979AEA /* Viewer.swift */,
-				9F3B4DDA299B001F00979AEA /* ExportOptionsSheet.swift */,
-				9F3B4DDB299B001F00979AEA /* ControlsView.swift */,
-				9F3B4DDC299B001F00979AEA /* EditorView.swift */,
-				9F3B4DDD299B001F00979AEA /* ContentView.swift */,
+				9F3B4DFF299B05CF00979AEA /* ExportDocument.swift */,
+				9F3B4E00299B05CF00979AEA /* FocusedValues+document.swift */,
+				9F3B4E01299B05CF00979AEA /* SIMD+initFromCGPoint.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9F3B4E04299B05D000979AEA /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B4E05299B05D000979AEA /* Shaders */,
+				9F3B4E0A299B05D000979AEA /* RenderDelegate.swift */,
+				9F3B4E0B299B05D000979AEA /* ImageRenderer.swift */,
+				9F3B4E0C299B05D000979AEA /* MetalUtil.swift */,
+				9F3B4E0D299B05D000979AEA /* RenderView.swift */,
+				9F3B4E0E299B05D000979AEA /* MTLTexture+toImage.swift */,
+				9F3B4E0F299B05D000979AEA /* Renderer.swift */,
+			);
+			path = Render;
+			sourceTree = "<group>";
+		};
+		9F3B4E05299B05D000979AEA /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B4E06299B05D000979AEA /* render.metal */,
+				9F3B4E07299B05D000979AEA /* user_shader.metal */,
+				9F3B4E08299B05D000979AEA /* user_shader.h */,
+				9F3B4E09299B05D000979AEA /* make_image.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		9F3B4E12299B05D000979AEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F3B4E13299B05D000979AEA /* RenderWrapper.swift */,
+				9F3B4E14299B05D000979AEA /* EditorControlsView.swift */,
+				9F3B4E15299B05D000979AEA /* Controls */,
+				9F3B4E19299B05D000979AEA /* Viewer.swift */,
+				9F3B4E1A299B05D000979AEA /* ExportOptionsSheet.swift */,
+				9F3B4E1B299B05D000979AEA /* ControlsView.swift */,
+				9F3B4E1C299B05D000979AEA /* EditorView.swift */,
+				9F3B4E1D299B05D000979AEA /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9F3B4DD5299B001F00979AEA /* Controls */ = {
+		9F3B4E15299B05D000979AEA /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				9F3B4DD6299B001F00979AEA /* ControlButtonStyle.swift */,
-				9F3B4DD7299B001F00979AEA /* ZoomControls.swift */,
-				9F3B4DD8299B001F00979AEA /* LocationControls.swift */,
+				9F3B4E16299B05D000979AEA /* ControlButtonStyle.swift */,
+				9F3B4E17299B05D000979AEA /* ZoomControls.swift */,
+				9F3B4E18299B05D000979AEA /* LocationControls.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -179,29 +195,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9F3B39422998293C00C8357A /* MetalPlayground */ = {
+		9F3B4DE7299B04D800979AEA /* MetalPlayground */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F3B39522998293C00C8357A /* Build configuration list for PBXNativeTarget "MetalPlayground" */;
+			buildConfigurationList = 9F3B4DFA299B04D900979AEA /* Build configuration list for PBXNativeTarget "MetalPlayground" */;
 			buildPhases = (
-				9F3B393F2998293C00C8357A /* Sources */,
-				9F3B39402998293C00C8357A /* Frameworks */,
-				9F3B39412998293C00C8357A /* Resources */,
+				9F3B4DE4299B04D800979AEA /* Sources */,
+				9F3B4DE5299B04D800979AEA /* Frameworks */,
+				9F3B4DE6299B04D800979AEA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9F3B398C299951DC00C8357A /* PBXTargetDependency */,
 			);
 			name = MetalPlayground;
-			productName = MetalToy;
-			productReference = 9F3B39432998293C00C8357A /* MetalPlayground.app */;
+			productName = MetalPlayground;
+			productReference = 9F3B4DE8299B04D800979AEA /* MetalPlayground.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9F3B398029994DFA00C8357A /* UserShader */ = {
+		9F3B4E38299B34C400979AEA /* UserShader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F3B398529994DFA00C8357A /* Build configuration list for PBXNativeTarget "UserShader" */;
+			buildConfigurationList = 9F3B4E3D299B34C400979AEA /* Build configuration list for PBXNativeTarget "UserShader" */;
 			buildPhases = (
-				9F3B397F29994DFA00C8357A /* Sources */,
+				9F3B4E37299B34C400979AEA /* Sources */,
 			);
 			buildRules = (
 			);
@@ -209,29 +224,28 @@
 			);
 			name = UserShader;
 			productName = UserShader;
-			productReference = 9F3B398129994DFA00C8357A /* libUserShader.metallib */;
+			productReference = 9F3B4E39299B34C400979AEA /* libUserShader.metallib */;
 			productType = "com.apple.product-type.metal-library";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9F3B393B2998293C00C8357A /* Project object */ = {
+		9F3B4DE0299B04D800979AEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					9F3B39422998293C00C8357A = {
+					9F3B4DE7299B04D800979AEA = {
 						CreatedOnToolsVersion = 14.2;
-						LastSwiftMigration = 1420;
 					};
-					9F3B398029994DFA00C8357A = {
+					9F3B4E38299B34C400979AEA = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = 9F3B393E2998293C00C8357A /* Build configuration list for PBXProject "MetalPlayground" */;
+			buildConfigurationList = 9F3B4DE3299B04D800979AEA /* Build configuration list for PBXProject "MetalPlayground" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -239,55 +253,75 @@
 				en,
 				Base,
 			);
-			mainGroup = 9F3B393A2998293C00C8357A;
-			productRefGroup = 9F3B39442998293C00C8357A /* Products */;
+			mainGroup = 9F3B4DDF299B04D800979AEA;
+			productRefGroup = 9F3B4DE9299B04D800979AEA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9F3B398029994DFA00C8357A /* UserShader */,
-				9F3B39422998293C00C8357A /* MetalPlayground */,
+				9F3B4DE7299B04D800979AEA /* MetalPlayground */,
+				9F3B4E38299B34C400979AEA /* UserShader */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9F3B39412998293C00C8357A /* Resources */ = {
+		9F3B4DE6299B04D800979AEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F3B398D2999526600C8357A /* libUserShader.metallib in Resources */,
+				9F3B4E41299B35A300979AEA /* libUserShader.metallib in Resources */,
+				9F3B4DF7299B04D900979AEA /* Preview Assets.xcassets in Resources */,
+				9F3B4DF2299B04D900979AEA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9F3B393F2998293C00C8357A /* Sources */ = {
+		9F3B4DE4299B04D800979AEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F3B4E2E299B05D000979AEA /* EditorControlsView.swift in Sources */,
+				9F3B4E2C299B05D000979AEA /* RenderConfiguration.swift in Sources */,
+				9F3B4E2B299B05D000979AEA /* Renderer.swift in Sources */,
+				9F3B4E32299B05D000979AEA /* Viewer.swift in Sources */,
+				9F3B4E1F299B05D000979AEA /* ExportDocument.swift in Sources */,
+				9F3B4E2F299B05D000979AEA /* ControlButtonStyle.swift in Sources */,
+				9F3B4E21299B05D000979AEA /* SIMD+initFromCGPoint.swift in Sources */,
+				9F3B4E2D299B05D000979AEA /* RenderWrapper.swift in Sources */,
+				9F3B4E25299B05D000979AEA /* make_image.metal in Sources */,
+				9F3B4E33299B05D000979AEA /* ExportOptionsSheet.swift in Sources */,
+				9F3B4E27299B05D000979AEA /* ImageRenderer.swift in Sources */,
+				9F3B4E28299B05D000979AEA /* MetalUtil.swift in Sources */,
+				9F3B4DEC299B04D800979AEA /* MetalPlaygroundApp.swift in Sources */,
+				9F3B4E36299B05D000979AEA /* ContentView.swift in Sources */,
+				9F3B4E30299B05D000979AEA /* ZoomControls.swift in Sources */,
+				9F3B4E22299B05D000979AEA /* MetalDocument.swift in Sources */,
+				9F3B4E26299B05D000979AEA /* RenderDelegate.swift in Sources */,
+				9F3B4E23299B05D000979AEA /* render.metal in Sources */,
+				9F3B4E1E299B05D000979AEA /* EditorCommands.swift in Sources */,
+				9F3B4E29299B05D000979AEA /* RenderView.swift in Sources */,
+				9F3B4E35299B05D000979AEA /* EditorView.swift in Sources */,
+				9F3B4E2A299B05D000979AEA /* MTLTexture+toImage.swift in Sources */,
+				9F3B4E31299B05D000979AEA /* LocationControls.swift in Sources */,
+				9F3B4E34299B05D000979AEA /* ControlsView.swift in Sources */,
+				9F3B4E20299B05D000979AEA /* FocusedValues+document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9F3B397F29994DFA00C8357A /* Sources */ = {
+		9F3B4E37299B34C400979AEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F3B4E40299B34C900979AEA /* user_shader.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		9F3B398C299951DC00C8357A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9F3B398029994DFA00C8357A /* UserShader */;
-			targetProxy = 9F3B398B299951DC00C8357A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		9F3B39502998293C00C8357A /* Debug */ = {
+		9F3B4DF8299B04D900979AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -345,7 +379,7 @@
 			};
 			name = Debug;
 		};
-		9F3B39512998293C00C8357A /* Release */ = {
+		9F3B4DF9299B04D900979AEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -396,12 +430,11 @@
 			};
 			name = Release;
 		};
-		9F3B39532998293C00C8357A /* Debug */ = {
+		9F3B4DFB299B04D900979AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MetalPlayground/MetalPlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -409,7 +442,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MetalPlayground/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MetalPlayground;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -420,31 +452,30 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				"INFOPLIST_KEY_UISupportsDocumentBrowser[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UISupportsDocumentBrowser[sdk=iphonesimulator*]" = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				MTLLINKER_FLAGS = "-L${TARGET_BUILD_DIR} -lUserShader";
-				MTL_COMPILER_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thegail.MetalPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = MetalPlayground/bridging.h;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		9F3B39542998293C00C8357A /* Release */ = {
+		9F3B4DFC299B04D900979AEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MetalPlayground/MetalPlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -452,7 +483,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MetalPlayground/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MetalPlayground;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -463,13 +493,14 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				"INFOPLIST_KEY_UISupportsDocumentBrowser[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UISupportsDocumentBrowser[sdk=iphonesimulator*]" = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				MTLLINKER_FLAGS = "-L${TARGET_BUILD_DIR} -lUserShader";
-				MTL_COMPILER_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thegail.MetalPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -481,25 +512,25 @@
 			};
 			name = Release;
 		};
-		9F3B398629994DFA00C8357A /* Debug */ = {
+		9F3B4E3E299B34C400979AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INSTALL_PATH = "${TARGET_BUILD_DIR}";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTLLINKER_FLAGS = "-dynamiclib -install_name \"@executable_path/libUserShader.metallib\"";
+				MTL_COMPILER_FLAGS = "";
 				PRODUCT_NAME = "lib$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		9F3B398729994DFA00C8357A /* Release */ = {
+		9F3B4E3F299B34C400979AEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INSTALL_PATH = "${TARGET_BUILD_DIR}";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTLLINKER_FLAGS = "-dynamiclib -install_name \"@executable_path/libUserShader.metallib\"";
+				MTL_COMPILER_FLAGS = "";
 				PRODUCT_NAME = "lib$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -508,34 +539,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9F3B393E2998293C00C8357A /* Build configuration list for PBXProject "MetalPlayground" */ = {
+		9F3B4DE3299B04D800979AEA /* Build configuration list for PBXProject "MetalPlayground" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F3B39502998293C00C8357A /* Debug */,
-				9F3B39512998293C00C8357A /* Release */,
+				9F3B4DF8299B04D900979AEA /* Debug */,
+				9F3B4DF9299B04D900979AEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F3B39522998293C00C8357A /* Build configuration list for PBXNativeTarget "MetalPlayground" */ = {
+		9F3B4DFA299B04D900979AEA /* Build configuration list for PBXNativeTarget "MetalPlayground" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F3B39532998293C00C8357A /* Debug */,
-				9F3B39542998293C00C8357A /* Release */,
+				9F3B4DFB299B04D900979AEA /* Debug */,
+				9F3B4DFC299B04D900979AEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F3B398529994DFA00C8357A /* Build configuration list for PBXNativeTarget "UserShader" */ = {
+		9F3B4E3D299B34C400979AEA /* Build configuration list for PBXNativeTarget "UserShader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F3B398629994DFA00C8357A /* Debug */,
-				9F3B398729994DFA00C8357A /* Release */,
+				9F3B4E3E299B34C400979AEA /* Debug */,
+				9F3B4E3F299B34C400979AEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9F3B393B2998293C00C8357A /* Project object */;
+	rootObject = 9F3B4DE0299B04D800979AEA /* Project object */;
 }
