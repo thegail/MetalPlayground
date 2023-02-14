@@ -74,6 +74,7 @@
 		9F3B4E1C299B05D000979AEA /* Editor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
 		9F3B4E1D299B05D000979AEA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9F3B4E39299B34C400979AEA /* libUserShader.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = libUserShader.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FFEA73B299B7E19002E4398 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 		9F3B4DDF299B04D800979AEA = {
 			isa = PBXGroup;
 			children = (
+				9FFEA73B299B7E19002E4398 /* .gitignore */,
 				9F3B4DEA299B04D800979AEA /* MetalPlayground */,
 				9F3B4DE9299B04D800979AEA /* Products */,
 			);
