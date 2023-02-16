@@ -39,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F2833B1299E9599007615F8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9F2833B3299E966A007615F8 /* mandelbrot.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = mandelbrot.metal; sourceTree = "<group>"; };
+		9F2833B4299E966A007615F8 /* newton.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = newton.metal; sourceTree = "<group>"; };
 		9F3B4DE8299B04D800979AEA /* MetalPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3B4DEB299B04D800979AEA /* MetalPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalPlaygroundApp.swift; sourceTree = "<group>"; };
 		9F3B4DF1299B04D900979AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,10 +91,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F2833B2299E9647007615F8 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				9F2833B3299E966A007615F8 /* mandelbrot.metal */,
+				9F2833B4299E966A007615F8 /* newton.metal */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
 		9F3B4DDF299B04D800979AEA = {
 			isa = PBXGroup;
 			children = (
 				9FFEA73B299B7E19002E4398 /* .gitignore */,
+				9F2833B1299E9599007615F8 /* README.md */,
+				9F2833B2299E9647007615F8 /* Examples */,
 				9F3B4DEA299B04D800979AEA /* MetalPlayground */,
 				9F3B4DE9299B04D800979AEA /* Products */,
 			);
