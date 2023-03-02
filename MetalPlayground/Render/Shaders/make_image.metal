@@ -17,7 +17,8 @@ kernel void make_image(texture2d<float, access::write> image [[texture(0)]],
 	float2 f_coords = float2(coords) / float2(size);
 	f_coords -= float2(0.5);
 	f_coords.y *= -1;
-	f_coords *= float2(config->width);
+	float height = config->width / config->aspect;
+	f_coords *= float2(config->width, height);
 	f_coords += float2(config->x, config->y);
 	image.write(shader_main(f_coords, config->frame), coords);
 }

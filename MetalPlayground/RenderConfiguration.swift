@@ -9,25 +9,19 @@ import Foundation
 
 struct RenderConfiguration {
 	var shaderSource: String
-	var shaderConfiguration: render_config
 	var initialCoordinates: SIMD2<Float> = SIMD2(0, 0)
+	var x: Float
+	var y: Float
+	var width: Float
 	
 	var coordinates: SIMD2<Float> {
 		get {
-			SIMD2(self.shaderConfiguration.x, self.shaderConfiguration.y)
+			SIMD2(self.x, self.y)
 		}
 		set(new) {
 			self.initialCoordinates = new
-			self.shaderConfiguration.x = new.x
-			self.shaderConfiguration.y = new.y
-		}
-	}
-	var width: Float {
-		get {
-			self.shaderConfiguration.width
-		}
-		set(new) {
-			self.shaderConfiguration.width = new
+			self.x = new.x
+			self.y = new.y
 		}
 	}
 	var gestureCoordinates: SIMD2<Float> {
@@ -35,12 +29,12 @@ struct RenderConfiguration {
 			self.coordinates
 		}
 		set(new) {
-			self.shaderConfiguration.x = new.x
-			self.shaderConfiguration.y = new.y
+			self.x = new.x
+			self.y = new.y
 		}
 	}
 	
-	static let defaultConfiguration: Self = Self(shaderSource: Self.defaultSource, shaderConfiguration: render_config(x: 0, y: 0, width: 1, frame: 0))
+	static let defaultConfiguration: Self = Self(shaderSource: Self.defaultSource, x: 0, y: 0, width: 1)
 	
 	private static let defaultSource = """
 	#include <metal_stdlib>
@@ -53,16 +47,16 @@ struct RenderConfiguration {
 	"""
 	
 	mutating func zoomIn() {
-		self.shaderConfiguration.width /= 1.1
+		self.width /= 1.1
 	}
 	
 	mutating func zoomOut() {
-		self.shaderConfiguration.width *= 1.1
+		self.width *= 1.1
 	}
 	
 	mutating func goHome() {
 		self.coordinates = SIMD2(0, 0)
-		self.shaderConfiguration.width = 1
+		self.width = 1
 	}
 	
 	mutating func endGesture() {

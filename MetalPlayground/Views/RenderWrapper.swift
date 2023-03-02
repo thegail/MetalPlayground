@@ -13,17 +13,17 @@ struct RenderWrapper: View, Animatable {
 	var animatableData: AnimatablePair<Float, AnimatablePair<Float, Float>> {
 		get {
 			AnimatablePair(
-				self.configuration.shaderConfiguration.width,
+				self.configuration.width,
 				AnimatablePair(
-					self.configuration.shaderConfiguration.x,
-					self.configuration.shaderConfiguration.y
+					self.configuration.x,
+					self.configuration.y
 				)
 			)
 		}
 		set(new) {
-			self.configuration.shaderConfiguration.width = new.first
-			self.configuration.shaderConfiguration.x = new.second.first
-			self.configuration.shaderConfiguration.y = new.second.second
+			self.configuration.width = new.first
+			self.configuration.x = new.second.first
+			self.configuration.y = new.second.second
 		}
 	}
 	

@@ -36,6 +36,8 @@
 		9F3B4E36299B05D000979AEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E1D299B05D000979AEA /* ContentView.swift */; };
 		9F3B4E40299B34C900979AEA /* user_shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B4E07299B05D000979AEA /* user_shader.metal */; };
 		9F3B4E41299B35A300979AEA /* libUserShader.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3B4E39299B34C400979AEA /* libUserShader.metallib */; };
+		9FAEBB2629B113DF00F8FC2F /* InternalRenderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAEBB2529B113DF00F8FC2F /* InternalRenderConfiguration.swift */; };
+		9FAEBB2829B1145E00F8FC2F /* ShaderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAEBB2729B1145E00F8FC2F /* ShaderConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		9F3B4E1C299B05D000979AEA /* Editor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
 		9F3B4E1D299B05D000979AEA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9F3B4E39299B34C400979AEA /* libUserShader.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = libUserShader.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FAEBB2529B113DF00F8FC2F /* InternalRenderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalRenderConfiguration.swift; sourceTree = "<group>"; };
+		9FAEBB2729B1145E00F8FC2F /* ShaderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderConfiguration.swift; sourceTree = "<group>"; };
 		9FFEA73B299B7E19002E4398 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +168,8 @@
 				9F3B4E0D299B05D000979AEA /* RenderView.swift */,
 				9F3B4E0A299B05D000979AEA /* RenderDelegate.swift */,
 				9F3B4E0F299B05D000979AEA /* Renderer.swift */,
+				9FAEBB2729B1145E00F8FC2F /* ShaderConfiguration.swift */,
+				9FAEBB2529B113DF00F8FC2F /* InternalRenderConfiguration.swift */,
 				9F3B4E0C299B05D000979AEA /* MetalUtil.swift */,
 				9FFEA73A299B6AB6002E4398 /* Image */,
 				9F3B4E05299B05D000979AEA /* Shaders */,
@@ -317,9 +323,11 @@
 				9F3B4E25299B05D000979AEA /* make_image.metal in Sources */,
 				9F3B4E33299B05D000979AEA /* ExportOptionsSheet.swift in Sources */,
 				9F3B4E27299B05D000979AEA /* ImageRenderer.swift in Sources */,
+				9FAEBB2629B113DF00F8FC2F /* InternalRenderConfiguration.swift in Sources */,
 				9F3B4E28299B05D000979AEA /* MetalUtil.swift in Sources */,
 				9F3B4DEC299B04D800979AEA /* MetalPlaygroundApp.swift in Sources */,
 				9F3B4E36299B05D000979AEA /* ContentView.swift in Sources */,
+				9FAEBB2829B1145E00F8FC2F /* ShaderConfiguration.swift in Sources */,
 				9F3B4E30299B05D000979AEA /* ZoomControls.swift in Sources */,
 				9F3B4E22299B05D000979AEA /* MetalDocument.swift in Sources */,
 				9F3B4E26299B05D000979AEA /* RenderDelegate.swift in Sources */,

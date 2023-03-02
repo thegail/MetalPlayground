@@ -17,6 +17,7 @@ class Renderer {
 	let indexBuffer: MTLBuffer
 	let commandQueue: MTLCommandQueue
 	var configuration: RenderConfiguration
+	var internalConfiguration: InternalRenderConfiguration
 	
 	init(configuration: RenderConfiguration) throws {
 		self.device = try MetalUtil.getDevice()
@@ -30,6 +31,7 @@ class Renderer {
 		self.indexBuffer = try MetalUtil.makeIndexBuffer(device: self.device, indices: Self.indices)
 		self.commandQueue = try MetalUtil.getCommandQueue(device: self.device)
 		self.configuration = configuration
+		self.internalConfiguration = InternalRenderConfiguration.defaultConfiguration
 	}
 	
 	func draw(in view: MTKView) throws {
@@ -43,7 +45,7 @@ class Renderer {
 		commandBuffer.present(view.currentDrawable!)
 		commandBuffer.commit()
 		
-		self.configuration.shaderConfiguration.frame += 1
+		self.internalConfiguration.frame += 1
 	}
 	
 	func updateSize(size: CGSize) throws {
@@ -52,6 +54,7 @@ class Renderer {
 		}
 		self.outputSize = MTLSize(width: Int(size.width), height: Int(size.height), depth: 1)
 		self.outputImage = try MetalUtil.makeOutputImage(size: self.outputSize, device: self.device)
+		self.internalConfiguration.aspect = Float(size.width / size.height)
 	}
 	
 	func updateShader() throws {
@@ -61,7 +64,7 @@ class Renderer {
 	
 	func encodeCompute(commandBuffer: MTLCommandBuffer) throws {
 		let length = MemoryLayout<render_config>.stride
-		var configuration = self.configuration.shaderConfiguration
+		var configuration = ShaderConfiguration(user: self.configuration, auto: self.internalConfiguration)
 		guard let configurationBuffer = device.makeBuffer(bytes: &configuration, length: length) else {
 			throw Error.dataBuffer(description: "config")
 		}
