@@ -25,7 +25,9 @@ struct ContentView: View {
     var body: some View {
 		HSplitView {
 			Viewer(configuration: self.$configuration)
+				.layoutPriority(1)
 			Editor(document: self.$document, configuration: self.$configuration, exportShown: self.$showExportOptionsMenu)
+				.layoutPriority(1)
 		}
 		.edgesIgnoringSafeArea(.all)
 		.focusedSceneValue(\.configuration, self.$configuration)
