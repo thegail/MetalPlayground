@@ -47,6 +47,9 @@ class Renderer {
 	}
 	
 	func updateSize(size: CGSize) throws {
+		if size.width == 0 || size.height == 0 {
+			return
+		}
 		self.outputSize = MTLSize(width: Int(size.width), height: Int(size.height), depth: 1)
 		self.outputImage = try MetalUtil.makeOutputImage(size: self.outputSize, device: self.device)
 	}

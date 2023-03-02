@@ -50,7 +50,6 @@ struct Viewer: View {
 					.transition(.opacity.animation(.easeIn(duration: 0.1)))
 			}
 		}
-		.aspectRatio(1, contentMode: .fit)
 		.onHover(perform: { self.showControls = $0 })
     }
 }

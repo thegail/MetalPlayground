@@ -23,11 +23,11 @@ struct ContentView: View {
 	}
 	
     var body: some View {
-		HStack {
+		HSplitView {
 			Viewer(configuration: self.$configuration)
 			Editor(document: self.$document, configuration: self.$configuration, exportShown: self.$showExportOptionsMenu)
 		}
-		.padding()
+		.edgesIgnoringSafeArea(.all)
 		.focusedSceneValue(\.configuration, self.$configuration)
 		.focusedSceneValue(\.document, self.$document)
 		.focusedSceneValue(\.exportShown, self.$showExportOptionsMenu)
